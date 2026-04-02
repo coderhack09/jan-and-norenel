@@ -131,7 +131,7 @@ export function Details() {
           width={300}
           height={300}
           className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-65 scale-y-[-1]"
-          style={{ filter: DECO_FILTER }}
+          // style={{ filter: DECO_FILTER }}
           priority={false}
         />
       </div>
@@ -144,7 +144,7 @@ export function Details() {
           width={300}
           height={300}
           className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-65 scale-x-[-1] scale-y-[-1]"
-          style={{ filter: DECO_FILTER }}
+          // style={{ filter: DECO_FILTER }}
           priority={false}
         />
       </div>
@@ -157,7 +157,7 @@ export function Details() {
           width={300}
           height={300}
           className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-65"
-          style={{ filter: DECO_FILTER }}
+          // style={{ filter: DECO_FILTER }}
           priority={false}
         />
       </div>
@@ -170,7 +170,7 @@ export function Details() {
           width={300}
           height={300}
           className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-65 scale-x-[-1]"
-          style={{ filter: DECO_FILTER }}
+          // style={{ filter: DECO_FILTER }}
           priority={false}
         />
       </div>
