@@ -27,19 +27,19 @@ interface HeroProps {
 
 
 const desktopImages: string[] = [
-  '/desktop-background/couple (1).jpg',
-  '/desktop-background/couple (2).jpg',
-  '/desktop-background/couple (3).jpg',
-  '/desktop-background/couple (4).jpg',
-  '/desktop-background/couple (5).jpg'
+  '/desktop-background/couple (1).webp',
+  '/desktop-background/couple (2).webp',
+  '/desktop-background/couple (3).webp',
+  '/desktop-background/couple (4).webp',
+  '/desktop-background/couple (5).webp'
 ];
 
 const mobileImages: string[] = [
-'/mobile-background/couple (1).jpg',
-  '/mobile-background/couple (2).jpg',
-  '/mobile-background/couple (3).jpg',
-  '/mobile-background/couple (21).jpg',
-  '/mobile-background/couple (22).jpg'
+'/mobile-background/couple (17).webp',
+  '/mobile-background/couple (23).webp',
+  '/mobile-background/couple (9).webp',
+  '/mobile-background/couple (2).webp',
+  '/mobile-background/couple (4).webp'
 ];
 
 export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
@@ -121,20 +121,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
           </div>
         ))}
         
-        {/* Gradient Overlay - light champagne into beige, very soft so photo stays visible */}
-        <div 
+        {/* Linear gradient overlay for text readability */}
+        <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to bottom, var(--color-motif-deep)13, var(--color-motif-cream)47)'
+            background: 'linear-gradient(to bottom, rgba(47,79,62,0.55) 0%, rgba(47,79,62,0.15) 40%, rgba(47,79,62,0.15) 60%, rgba(47,79,62,0.72) 100%)'
           }}
-        />
-        
-        {/* Subtle vignette effect - soft brown edges, clear warm center */}
-        <div 
-          className="absolute inset-0 pointer-events-none"
-          style={{
-              background: 'radial-gradient(ellipse at center, transparent 0%, var(--color-motif-deep)18 100%)'
-            }}
         />
       </div>
 
@@ -161,9 +153,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
                 fill
                 className="object-contain"
                 priority
-                // style={{
-                //   filter: "brightness(0) saturate(100%) invert(17%) sepia(94%) saturate(1700%) hue-rotate(195deg) brightness(85%) contrast(110%) drop-shadow(0 4px 16px rgba(8,70,127,0.35))",
-                // }}
+                style={{
+                  filter: "brightness(0) invert(1) drop-shadow(0 0 18px rgba(255,255,255,0.7))",
+                }}
               />
             </div>
           </div>
@@ -179,8 +171,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
             style={{
               fontFamily: '"Great Vibes", cursive',
               fontWeight: 400,
-              color: 'var(--color-motif-deep)', // #F5EFE6
-              textShadow: '0 0 18px var(--color-motif-cream)',
+              color: 'var(--color-motif-cream)',
+              textShadow: '0 2px 16px rgba(47,79,62,0.5)',
             }}
           >
             You are
@@ -193,8 +185,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
             style={{
               fontFamily: '"Cinzel", serif',
               fontWeight: 700,
-              color: 'var(--color-motif-deep)', // #F5EFE6
-              textShadow: '0 0 22px var(--color-motif-cream)95',
+              color: 'var(--color-motif-cream)',
+              textShadow: '0 2px 20px rgba(47,79,62,0.5)',
               letterSpacing: '0.05em',
             }}
           >

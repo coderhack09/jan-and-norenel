@@ -18,8 +18,9 @@ const cormorant = Cormorant_Garamond({
 // Palette lives in globals.css → @theme inline → --color-motif-*
 // Edit there once to update every component.
 const GALLERY_TEXT = "var(--color-motif-deep)"
+// Filter renders flower decorations in --color-motif-medium (#5F7D6B, classic sage)
 const GALLERY_DECO_FILTER =
-  "brightness(0) saturate(100%) invert(18%) sepia(78%) saturate(2300%) hue-rotate(188deg) brightness(90%) contrast(95%)"
+  "brightness(0) saturate(100%) invert(47%) sepia(18%) saturate(650%) hue-rotate(100deg) brightness(88%) contrast(85%)"
 
 // Generate on each request so newly added images in public/ appear without a rebuild
 export const dynamic = "force-dynamic"
@@ -115,14 +116,14 @@ export default async function GalleryPage() {
           <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
             <div
               className="w-8 sm:w-12 md:w-16 h-px"
-              style={{ background: `linear-gradient(to right, transparent, var(--color-motif-silver), transparent)` }}
+              style={{ background: `linear-gradient(to right, transparent, var(--color-motif-accent), transparent)` }}
             />
             <div className="w-1.5 h-1.5 rounded-full opacity-80" style={{ backgroundColor: GALLERY_TEXT }} />
             <div className="w-1.5 h-1.5 rounded-full opacity-50" style={{ backgroundColor: GALLERY_TEXT }} />
             <div className="w-1.5 h-1.5 rounded-full opacity-80" style={{ backgroundColor: GALLERY_TEXT }} />
             <div
               className="w-8 sm:w-12 md:w-16 h-px"
-              style={{ background: `linear-gradient(to right, transparent, var(--color-motif-silver), transparent)` }}
+              style={{ background: `linear-gradient(to right, transparent, var(--color-motif-accent), transparent)` }}
             />
           </div>
 

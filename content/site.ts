@@ -1,11 +1,11 @@
 export const siteConfig = {
   couple: {
-    bride: "Jennifer Vidal ", //Noenyl Bryle M. Gonzaga
-    brideNickname: "Jennifer", //Ltryl
-    groom: "Patrick Capulong", //Ltryl B. Benitez
-    groomNickname: "Patrick",
-    monogram:"/monogram/monogram.png" ,//Ltryl
-    backgroundMusic:"/background_music/Up Dharma Down - Tadhana (Instrumental).mp3"
+    bride: "Jezel Mae A. Prudente ", //Noenyl Bryle M. Gonzaga
+    brideNickname: "Jezel Mae", //Ltryl
+    groom: "Rodel C. Campos", //Ltryl B. Benitez
+    groomNickname: "Rodel",
+    monogram:"/monogram/monogramnew.png" ,//Ltryl
+    backgroundMusic:"/background_music/Kay Tagal Kitang Hinintay - Spongecola (wedding version).mp3"
   },
   googleAPI:{
     messageForm: "https://docs.google.com/forms/d/e/1FAIpQLSdC0hHItXxsbAmG_-LtoQrb8ihxw-5OthDKLKRbSXHJ0Llqfg/formResponse", //done
@@ -19,18 +19,18 @@ export const siteConfig = {
     googleShare: "https://docs.google.com/spreadsheets/d/1CQ66icW--Xvx7klG5zpe3MtzQS4S_0i8SfOxwz2px3o/edit?usp=sharing",
   },
   wedding: {
-    date: "May 22, 2026",
-    time: "1:00 PM",
-    venue: "St. Benedict Parish ",
+    date: "June 6, 2026",
+    time: "10:00 AM",
+    venue: "Sagrado Corazon De Jesus Nazareno Parish, Tagum City",
     tagline: "are getting married!",
     theme: "Our wedding palette is inspired by timeless elegance and warmth.Motif Colors: Champagne Gold, Soft Beige, Warm Soft Brown",
     motif: "#001F4B, #04396D, #015B97, #6497B2, #B2CDE0",
   },
   details: {
     rsvp: {
-      deadline: "APRIL 30, 2026",
-      contact: "Jennifer Vidal",
-      phone: "0927 888 8888",
+      deadline: "MAY 30, 2026",
+      contact: "Jezel Mae A. Prudente",
+      phone: "0917 888 8888",
     },
   },
   giftRegistry: {
@@ -38,55 +38,49 @@ export const siteConfig = {
     id: "Gcash",
     src: "/QR/Gcash.png",
     label: "Gcash",
-    accountNumber: "Gcash: JE*****R V.",
+    accountNumber: "Gcash: RO**L C.",
     },
-    QR_2:{
-    id: "BPI",
-    src: "/QR/BPI.png",
-    label: "BPI",
-    accountNumber: "BPI: JE*****R V.",
-    }
   },
   ceremony: {
-    location: "St. Benedict Parish ",
-    venue: "Ayala Westgrove Heights, South Blvd, Silang, 4118 Cavite",
-    date: "May 22, 2026",
-    day: "Friday",
-    time: "1:00 PM",
-    entourageTime: "12:00 PM",
-    guestsTime: "12:30 PM",
-    image: "/Details/ceremony.png",
+    location: "Sagrado Corazon De Jesus Nazareno Parish",
+    venue: "Bermudez Compound, Apokon, Tagum City",
+    date: "June 6, 2026",
+    day: "Saturday",
+    time: "10:00 AM",
+    entourageTime: "9:00 AM",
+    guestsTime: "9:30 AM",
+    image: "/Details/reception.png",
   },
   reception: {
-    location: "Crystal palace of aquila in the sky",
-    venue: "Purok 5 Bgy, Pulong Bunga, Silang, 4118  Cavite",
+    location: "Sam's Center (just beside the church)",
+    venue: "Bermudez Compound, Apokon, Tagum City",
     date: "May 22, 2026",
-    time: "2 :00 PM",
-    image: ["/Details/reception3.png","/Details/reception4.png"],
+    time: "12:00 PM",
+    image: ["/Details/reception1.png","/Details/receotion2.png"],
   },                          
   dressCode: {
       theme: "SEMI-FORMAL",
     colors: "#001F4B, #04396D, #015B97, #6497B2, #B2CDE0",
     sponsors: {
-      male: "Guests are kindly requested to wear attire in any of the shades within our wedding palette.Color pallet and image to be followed. STRICTLY no shorts, maong jeans, t-shirts, or slippers.",
-      female: "Guests are kindly requested to wear attire in any of the shades within our wedding palette.Color pallet and image to be followed. STRICTLY no shorts, maong jeans, t-shirts, or slippers.",
-      notes: "Principal sponsors: Navy blue Dress | Black Coat/ Navy blue or black necktie",
-      photo: "/Details/sponsors attire.png",
-      palette: "#000000, #1F1D1D,#001F4B, #0B1F3A, #142C4F",
+      male: "Gentlemen - Barong Tagalog/ Black Pants and Shoes/ White Shirt",
+      female: "Ladies - Filipiniana-inspired design in beige or champagne tones",
+      notes: "Principal sponsors: \n Gentlemen - Barong Tagalog/ Black Pants and Shoes/ White Shirt  \nLadies - Filipiniana-inspired design in beige or champagne tones",
+      photo: "/Details/sponsors.png",
+      palette: "#A68A75,#D6BFA3, #F5EFE6,#EDE3D6",
     },
     guests: {
       gents: "Guests are kindly requested to wear attire in any of the shades within our wedding palette.Color pallet and image to be followed. STRICTLY no shorts, maong jeans, t-shirts, or slippers.",
       ladies: "Guests are kindly requested to wear attire in any of the shades within our wedding palette.Color pallet and image to be followed. STRICTLY no shorts, maong jeans, t-shirts, or slippers.",
-      notes: "Guest:  Dark Gray - Semi formal | Cocktail dress",
-      photo: "/Details/guestAttire.png",
-      palette: " #514B4B",
+      notes: "To complement our wedding motif, we respectfully request semi-formal attire in sage green or inspired tones for all guests",
+      photo: "/Details/Guest.png",
+      palette: " #2F4F3E, #5F7D6B, #A7BFA9, #F4F6F2",
     },
     entourage: {
-      notes: "Black dresses | Dark gray coat & tie",
-      photo: "/Details/newEntourage.png",
-      palette: "#000000, #1F1D1D, #3A3636, #514B4B"
+      notes: "Ladies are requested to wear sage green dresses or gowns (or inspired shades), while gentlemen may wear a sage green coat and tie (or inspired tones).",
+      photo: "/Details/entourage.png",
+      palette: "#2F4F3E, #5F7D6B, #A7BFA9, #F4F6F2"
     },
-    note: "We kindly request our guests to dress in attire following our wedding palette."
+    note: "Ladies are requested to wear sage green dresses or gowns (or inspired shades), while gentlemen may wear a sage green coat and tie (or inspired tones)."
   },
   narratives: {
     ourStory: `Once upon a signature…
@@ -117,7 +111,7 @@ Now, as they prepare to say yes before God and the people they love most, Cather
   },
   snapShare: {
     googleDriveLink: "https://drive.google.com/drive/folders/1DqNft6O7vkNQsIaWgUbGW6-m9NQraMfd?usp=sharing",
-    hashtag: ["#JENfoundtherightPATh"],
+    hashtag: ["#JezelAndRodel,#JezelAndRodelWedding"],
     instructions: "Please scan this QR Code, create a folder with your name and upload the photos and videos you have taken during our wedding reception. We are delighted to see your snaps too!",
   },
 }

@@ -39,11 +39,11 @@ export function LoveStory() {
         layout="image-left"
         isFirst={true}
         title="A Love Meant to Last"
-        imageSrc="/mobile-background/couple (1).jpg"
+        imageSrc="/mobile-background/couple (2).webp"
         text={
           <>
             <p className="mb-4">
-            Jennifer and Patrick’s story began in the simplest yet most meaningful way—two hearts crossing paths at just the right moment, unaware that something extraordinary was about to unfold. 
+            {siteConfig.couple.brideNickname} and {siteConfig.couple.groomNickname}’s story began in the simplest yet most meaningful way—two hearts crossing paths at just the right moment, unaware that something extraordinary was about to unfold. 
             What started as a connection soon blossomed into a love that felt both natural and destined, growing stronger with every shared smile and conversation.
             </p>
            
@@ -55,7 +55,7 @@ export function LoveStory() {
       <StorySection
         theme="dark"
         layout="image-right"
-        imageSrc="/mobile-background/couple (5).jpg"
+        imageSrc="/mobile-background/couple (12).webp"
         // title="Became a Couple (2019)"
         text={
           <>
@@ -71,7 +71,7 @@ export function LoveStory() {
         theme="light"
         layout="image-left"
         isLast={true}
-        imageSrc="/mobile-background/couple (3).jpg"
+        imageSrc="/mobile-background/couple (13).webp"
         // title="The Proposal (2025)"
         text={
           <>
@@ -86,12 +86,12 @@ export function LoveStory() {
             <StorySection
         theme="dark"
         layout="image-right"
-        imageSrc="/mobile-background/couple (8).jpg"
+        imageSrc="/mobile-background/couple (17).webp"
         // title="Became a Couple (2019)"
         text={
           <>
             <p>
-            Now, Jennifer and Patrick are ready to take the next step—hand in hand, heart to heart. With grateful spirits and hopeful hearts, they choose to turn their love into a lifelong commitment, embracing a future filled with shared dreams and endless possibilities.
+            Now, {siteConfig.couple.brideNickname} and {siteConfig.couple.groomNickname} are ready to take the next step—hand in hand, heart to heart. With grateful spirits and hopeful hearts, they choose to turn their love into a lifelong commitment, embracing a future filled with shared dreams and endless possibilities.
             </p>
           </>
         }
@@ -102,7 +102,7 @@ export function LoveStory() {
         theme="light"
         layout="image-left"
         isLast={true}
-        imageSrc="/mobile-background/couple (2).jpg"
+        imageSrc="/mobile-background/couple (10).webp"
         // title="The Proposal (2025)"
         text={
           <>

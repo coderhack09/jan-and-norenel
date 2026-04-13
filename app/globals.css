@@ -88,12 +88,11 @@
   --font-serif: "Great Vibes", "Great Vibes Fallback";
 
   /* ─── Motif palette — edit here, affects every component ─── */
-  --color-motif-deep:    #050505;  /* near-black background */
-  --color-motif-medium:  #121212;  /* layered dark surface */
-  --color-motif-accent:  #FFFFFF;  /* pure white (primary highlight) */
-  --color-motif-cream:   #EDEDED;  /* soft white text */
-  --color-motif-soft:    #1A1A1A;  /* section separation */
-  --color-motif-silver:  #A6A6A6;  /* secondary text */  /* muted silver text/icons */  /* cool neutral divider */  /* neutral divider */
+  --color-motif-deep:    #2F4F3E;  /* deep sage green - headings */
+  --color-motif-medium:  #5F7D6B;  /* classic sage - body text */
+  --color-motif-accent:  #A7BFA9;  /* light sage - highlights */
+  --color-motif-cream:   #F4F6F2;  /* soft watercolor background */
+  --color-motif-soft:    #DDE6DD;  /* pale sage - cards / sections */  /* secondary text */  /* muted silver text/icons */  /* cool neutral divider */  /* neutral divider */
   /* ─────────────────────────────────────────────────────────── */
   --font-imperial-script: "Imperial Script", cursive;
   --color-background: var(--background);
@@ -174,6 +173,66 @@ html {
 
 .lighten-regular {
   font-family: "LightenFree", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ── Lora Bold font ── */
+@font-face {
+  font-family: "LoraBold";
+  src: url("/fonts/Lora-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.lora-bold {
+  font-family: "LoraBold", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ── Lora Regular font ── */
+@font-face {
+  font-family: "LoraRegular";
+  src: url("/fonts/Lora-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.lora-regular {
+  font-family: "LoraRegular", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ── Awesome Lathusca font ── */
+@font-face {
+  font-family: "AwesomeLathusca";
+  src: url("/fonts/AwesomeLathusca.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.awesome-lathusca {
+  font-family: "AwesomeLathusca", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ── Symphony Pro Regular font ── */
+@font-face {
+  font-family: "SymphonyPro";
+  src: url("/fonts/symphony-pro-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.symphony-pro-regular {
+  font-family: "SymphonyPro", cursive;
   font-weight: 400;
   font-style: normal;
 }

@@ -7,6 +7,19 @@ import { Cormorant_Garamond, Cinzel } from "next/font/google"
 import { Section } from "@/components/section"
 import { CloudinaryImage } from "@/components/ui/cloudinary-image"
 import { getCloudinaryUrl } from "@/lib/cloudinary"
+
+/** Returns the Cloudinary URL if CLOUD_NAME is set, otherwise the local public path. */
+function imgSrc(path: string, width: number): string {
+  return getCloudinaryUrl(path, { width, quality: "auto" })
+}
+
+/** Falls back to the local public path on any load error (e.g. not yet uploaded). */
+function onImgError(e: React.SyntheticEvent<HTMLImageElement>, fallback: string) {
+  const img = e.currentTarget
+  if (img.src !== fallback) {
+    img.src = fallback
+  }
+}
 // Removed circular gallery in favor of a responsive masonry layout
 
 // Palette lives in globals.css → @theme inline → --color-motif-*
@@ -27,13 +40,20 @@ const cinzel = Cinzel({
 })
 
 const galleryItems = [
-  { image: "/gallery/couple (1).jpg", text: " " },
-  { image: "/gallery/couple (7).jpg", text: " " },
-  { image: "/gallery/couple (4).jpg", text: " " },
-  { image: "/gallery/couple (5).jpg", text: " " },
-  { image: "/gallery/couple (6).jpg", text: " " },
-  { image: "/gallery/couple (8).jpg", text: " " },
-  { image: "/gallery/couple (2).jpg", text: " " },
+  { image: "/mobile-background/couple (1).webp", text: " " },
+  { image: "/mobile-background/couple (7).webp", text: " " },
+  { image: "/mobile-background/couple (4).webp", text: " " },
+  { image: "/mobile-background/couple (9).webp", text: " " },
+  { image: "/mobile-background/couple (11).webp", text: " " },
+  { image: "/mobile-background/couple (14).webp", text: " " },
+  { image: "/mobile-background/couple (15).webp", text: " " },
+  { image: "/mobile-background/couple (16).webp", text: " " },
+  { image: "/mobile-background/couple (18).webp", text: " " },
+  { image: "/mobile-background/couple (19).webp", text: " " },
+  { image: "/mobile-background/couple (20).webp", text: " " },
+  { image: "/mobile-background/couple (21).webp", text: " " },
+  { image: "/mobile-background/couple (22).webp", text: " " },
+  { image: "/mobile-background/couple (23).webp", text: " " },
 ]
 
 export function Gallery() {
@@ -97,9 +117,9 @@ export function Gallery() {
   useEffect(() => {
     if (selectedImage) {
       const next = new window.Image()
-      next.src = getCloudinaryUrl(galleryItems[(currentIndex + 1) % galleryItems.length].image, { width: 1200 })
+      next.src = imgSrc(galleryItems[(currentIndex + 1) % galleryItems.length].image, 1200)
       const prev = new window.Image()
-      prev.src = getCloudinaryUrl(galleryItems[(currentIndex - 1 + galleryItems.length) % galleryItems.length].image, { width: 1200 })
+      prev.src = imgSrc(galleryItems[(currentIndex - 1 + galleryItems.length) % galleryItems.length].image, 1200)
     }
   }, [selectedImage, currentIndex])
 
@@ -226,31 +246,23 @@ export function Gallery() {
                       <button
                         key={item.image + index}
                         type="button"
-                        className="group relative snap-center shrink-0 w-[82%] overflow-hidden rounded-lg bg-motif-cream/90 backdrop-blur-sm border border-motif-accent/40 transition-all duration-300 active:border-motif-accent/60"
+                        className="group relative snap-center shrink-0 w-[82%] overflow-hidden rounded-lg border border-motif-accent/40 transition-all duration-300 active:border-motif-accent/60"
                         onClick={() => {
                           setSelectedImage(item)
                           setCurrentIndex(index)
                         }}
                         aria-label={`Open image ${index + 1}`}
                       >
-                        {/* Subtle glow on active (mobile) */}
-                        <div className="absolute -inset-0.5 rounded-lg opacity-0 group-active:opacity-100 transition-opacity duration-300 blur-sm" style={{ background: 'linear-gradient(to bottom right, color-mix(in srgb, var(--color-motif-accent) 30%, transparent), color-mix(in srgb, var(--color-motif-deep) 15%, transparent))' }} />
-
                         <div className="relative aspect-[3/4] overflow-hidden">
                           <img
-                            src={getCloudinaryUrl(item.image, { width: 600, quality: "auto" })}
+                            src={imgSrc(item.image, 600)}
+                            onError={(e) => onImgError(e, item.image)}
                             alt={item.text || `Gallery image ${index + 1}`}
                             loading="lazy"
                             decoding="async"
                             className="w-full h-full object-cover transition-transform duration-500 group-active:scale-[1.02]"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-active:opacity-100 transition-opacity duration-300" />
-                        </div>
-
-                        <div className="absolute top-2 right-2 backdrop-blur-sm rounded-full px-2 py-1" style={{ backgroundColor: 'color-mix(in srgb, var(--color-motif-deep) 60%, transparent)' }}>
-                          <span className="text-xs font-medium text-motif-cream">
-                            {index + 1}/{galleryItems.length}
-                          </span>
                         </div>
                       </button>
                     ))}
@@ -267,19 +279,17 @@ export function Gallery() {
                     <button
                       key={item.image + index}
                       type="button"
-                      className="group relative w-full overflow-hidden rounded-xl bg-motif-cream/90 backdrop-blur-sm border border-motif-accent/40 transition-all duration-300 hover:border-motif-accent/60"
+                      className="group relative w-full overflow-hidden rounded-xl border border-motif-accent/40 transition-all duration-300 hover:border-motif-accent/60"
                       onClick={() => {
                         setSelectedImage(item)
                         setCurrentIndex(index)
                       }}
                       aria-label={`Open image ${index + 1}`}
                     >
-                      {/* Subtle glow on hover */}
-                      <div className="absolute -inset-0.5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" style={{ background: 'linear-gradient(to bottom right, color-mix(in srgb, var(--color-motif-accent) 25%, transparent), color-mix(in srgb, var(--color-motif-deep) 12%, transparent))' }} />
-
                       <div className="relative aspect-[3/4] md:aspect-square overflow-hidden">
                         <img
-                          src={getCloudinaryUrl(item.image, { width: 500, quality: "auto" })}
+                          src={imgSrc(item.image, 500)}
+                          onError={(e) => onImgError(e, item.image)}
                           alt={item.text || `Gallery image ${index + 1}`}
                           loading="lazy"
                           decoding="async"
@@ -287,13 +297,6 @@ export function Gallery() {
                         />
                         {/* Gradient overlay on hover */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </div>
-
-                      {/* Image counter badge */}
-                      <div className="absolute top-2 right-2 backdrop-blur-sm rounded-full px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: 'color-mix(in srgb, var(--color-motif-deep) 60%, transparent)' }}>
-                        <span className="text-xs font-medium text-motif-cream">
-                          {index + 1}/{galleryItems.length}
-                        </span>
                       </div>
                     </button>
                   ))}
@@ -306,6 +309,7 @@ export function Gallery() {
               <div className="mt-10 sm:mt-12 flex justify-center">
                 <Link
                   href="/gallery"
+                  onClick={() => sessionStorage.setItem("returnFromGallery", "true")}
                   className={`${cinzel.className} inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-[0.65rem] sm:text-xs uppercase tracking-[0.22em] font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-motif-cream focus-visible:ring-motif-deep`}
                   style={{
                     color: 'var(--color-motif-cream)',
@@ -455,7 +459,8 @@ export function Gallery() {
                 onClick={(e) => e.stopPropagation()}
               >
                 <img
-                  src={getCloudinaryUrl(selectedImage.image || "/placeholder.svg", { width: 1200, quality: "auto" })}
+                  src={imgSrc(selectedImage.image, 1200)}
+                  onError={(e) => onImgError(e, selectedImage.image)}
                   alt={selectedImage.text || "Gallery image"}
                   style={{ 
                     transform: `translate3d(${pan.x}px, ${pan.y}px, 0) scale(${zoomScale})`, 

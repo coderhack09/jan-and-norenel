@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useState, useRef } from "react"
+import Image from "next/image"
 import { CloudinaryImage } from "@/components/ui/cloudinary-image"
 import { siteConfig } from "@/content/site"
 
@@ -34,12 +35,12 @@ interface Particle {
   colorIdx: number
 }
 
-/** Pure whites and silvers for luxury black & white */
+/** Darker sage tones for visibility on light cream background */
 const PARTICLE_COLORS = [
-  "255, 255, 255",  // pure white
-  "220, 220, 220",  // light silver
-  "180, 180, 180",  // mid silver
-  "245, 245, 245",  // off-white
+  "95,  125, 107",  // --color-motif-medium #5F7D6B
+  "47,  79,  62",   // --color-motif-deep   #2F4F3E
+  "167, 191, 169",  // --color-motif-accent #A7BFA9
+  "221, 230, 221",  // --color-motif-soft   #DDE6DD
 ]
 
 function createParticles(width: number, height: number): Particle[] {
@@ -50,7 +51,7 @@ function createParticles(width: number, height: number): Particle[] {
     vx: (Math.random() - 0.5) * 0.25,
     vy: -(Math.random() * 0.18 + 0.06),   // slow upward drift
     radius: Math.random() * 1.8 + 0.4,
-    opacity: Math.random() * 0.4 + 0.15,
+    opacity: Math.random() * 0.35 + 0.20,
     twinklePhase: Math.random() * Math.PI * 2,
     twinkleSpeed: Math.random() * 0.012 + 0.004,
     colorIdx: Math.floor(Math.random() * PARTICLE_COLORS.length),
@@ -190,20 +191,20 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       aria-valuemax={100}
       aria-label="Loading invitation"
     >
-      {/* ── Layer 1: True black base ── */}
+      {/* ── Layer 1: Soft cream watercolor base ── */}
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(155deg, #000000 0%, #050505 40%, #080808 70%, #030303 100%)",
+          background: "linear-gradient(155deg, #F4F6F2 0%, #EDF1EC 40%, #F0F4EF 70%, #F4F6F2 100%)",
         }}
       />
 
-      {/* ── Layer 2: Subtle white radial glow at center ── */}
+      {/* ── Layer 2: Subtle sage wash at center ── */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 55% 50% at 50% 52%, rgba(255, 255, 255, 0.05) 0%, transparent 75%)",
+            "radial-gradient(ellipse 60% 55% at 50% 52%, rgba(95, 125, 107, 0.07) 0%, transparent 75%)",
         }}
       />
 
@@ -211,20 +212,56 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       <canvas
         ref={canvasRef}
         className="absolute inset-0 pointer-events-none"
-        style={{ mixBlendMode: "screen" }}
+        style={{ mixBlendMode: "multiply" }}
         aria-hidden
       />
 
-      {/* ── Layer 4: Edge vignette for depth ── */}
+      {/* ── Layer 4: Soft sage edge vignette ── */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 85% 80% at 50% 50%, transparent 35%, rgba(0, 0, 0, 0.78) 100%)",
+            "radial-gradient(ellipse 85% 80% at 50% 50%, transparent 40%, rgba(167, 191, 169, 0.18) 100%)",
         }}
       />
 
-      {/* ── Layer 5: Ghost wedding-date watermark (right side) ── */}
+      {/* ── Layer 5: Corner floral decorations ── */}
+      <Image
+        src="/decoration/top-left.png"
+        alt=""
+        width={280}
+        height={280}
+        className="absolute top-0 left-0 pointer-events-none select-none w-36 sm:w-48 md:w-60 lg:w-64"
+        aria-hidden
+        priority
+      />
+      <Image
+        src="/decoration/top-right.png"
+        alt=""
+        width={280}
+        height={280}
+        className="absolute top-0 right-0 pointer-events-none select-none w-36 sm:w-48 md:w-60 lg:w-64"
+        aria-hidden
+        priority
+      />
+      <Image
+        src="/decoration/bottom-left.png"
+        alt=""
+        width={280}
+        height={280}
+        className="absolute bottom-0 left-0 pointer-events-none select-none w-36 sm:w-48 md:w-60 lg:w-64"
+        aria-hidden
+      />
+      <Image
+        src="/decoration/right-bottom.png"
+        alt=""
+        width={280}
+        height={280}
+        className="absolute bottom-0 right-0 pointer-events-none select-none w-36 sm:w-48 md:w-60 lg:w-64"
+        aria-hidden
+      />
+
+      {/* ── Layer 6: Ghost wedding-date watermark (right side) ── */}
       <div
         className="absolute inset-0 pointer-events-none flex flex-col items-end justify-center pr-4 sm:pr-8 md:pr-12 lg:pr-16 select-none"
         aria-hidden
@@ -232,11 +269,10 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         {GHOST_NUMBERS.map((num, i) => (
           <span
             key={`ghost-${num}-${i}`}
-            className="font-bold leading-[0.82]"
+            className="lora-bold leading-[0.82]"
             style={{
-              fontFamily: '"Cinzel", serif',
               fontSize: "clamp(5rem, 14vw, 12rem)",
-              color: "rgba(255, 255, 255, 0.045)",
+              color: "rgba(47, 79, 62, 0.06)",
               letterSpacing: "-0.04em",
               opacity: phase >= 2 ? 1 : 0,
               transition: `opacity 1.6s ease-out ${i * 150}ms`,
@@ -266,7 +302,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                 width: "176px",
                 height: "176px",
                 background:
-                  "radial-gradient(circle, rgba(255, 255, 255, 0.10) 0%, transparent 65%)",
+                  "radial-gradient(circle, rgba(95, 125, 107, 0.12) 0%, transparent 65%)",
               }}
             />
             {/* Thin ring accent */}
@@ -275,26 +311,26 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
               style={{
                 width: "96px",
                 height: "96px",
-                border: "1px solid rgba(255, 255, 255, 0.14)",
+                border: "1px solid rgba(95, 125, 107, 0.25)",
               }}
             />
             <CloudinaryImage
-              src="/monogram/monogram.png"
+              src={siteConfig.couple.monogram}
               alt="Monogram"
               width={240}
               height={240}
-              className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 object-contain object-center brightness-0 invert"
-              style={{ opacity: 0.88 }}
+              className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 object-contain object-center brightness-0"
+              style={{ opacity: 0.75 }}
               priority
             />
           </div>
         </div>
 
         {/* Year ornament rule */}
-        <div className={`flex items-center gap-3 justify-center mb-5 ${vis(2)}`}>
+        {/* <div className={`flex items-center gap-3 justify-center mb-5 ${vis(2)}`}>
           <div
             className="h-px flex-1"
-            style={{ background: "linear-gradient(to left, rgba(255, 255, 255, 0.22), transparent)" }}
+            style={{ background: "linear-gradient(to left, rgba(47, 79, 62, 0.28), transparent)" }}
           />
           <span
             style={{
@@ -302,16 +338,16 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
               fontSize: "0.5rem",
               letterSpacing: "0.45em",
               textTransform: "uppercase",
-              color: "rgba(255, 255, 255, 0.40)",
+              color: "rgba(47, 79, 62, 0.55)",
             }}
           >
             Est. {new Date(siteConfig.wedding.date).getFullYear()}
           </span>
           <div
             className="h-px flex-1"
-            style={{ background: "linear-gradient(to right, rgba(255, 255, 255, 0.22), transparent)" }}
+            style={{ background: "linear-gradient(to right, rgba(47, 79, 62, 0.28), transparent)" }}
           />
-        </div>
+        </div> */}
 
         {/* Couple names — Lighten font */}
         <h1
@@ -319,39 +355,40 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           style={{ transitionDelay: "60ms" }}
         >
           <span
-            className="lighten-regular block"
+            className="symphony-pro-regular block"
             style={{
-              fontSize: "clamp(2.6rem, 9vw, 4.2rem)",
-              color: "#FFFFFF",
-              letterSpacing: "0.13em",
-              textShadow: "0 2px 40px rgba(255, 255, 255, 0.18)",
+              fontSize: "clamp(3.8rem, 13vw, 6.5rem)",
+              color: "#2F4F3E",
+              lineHeight: 1.1,
+              textShadow: "0 2px 24px rgba(95, 125, 107, 0.18)",
             }}
           >
-            {siteConfig.couple.groomNickname.trim()}
+            {siteConfig.couple.brideNickname.trim()}
           </span>
 
           <span
-            className="block my-1"
+            className="symphony-pro-regular block"
             style={{
-              fontFamily: "var(--font-imperial-script), cursive",
-              fontSize: "clamp(1.55rem, 5vw, 2.35rem)",
-              color: "rgba(255, 255, 255, 0.50)",
-              fontWeight: 400,
+              fontSize: "clamp(2.2rem, 7vw, 3.5rem)",
+              color: "rgba(95, 125, 107, 0.70)",
+              lineHeight: 1,
+              marginTop: "0.1em",
+              marginBottom: "0.05em",
             }}
           >
             &amp;
           </span>
 
           <span
-            className="lighten-regular block"
+            className="awesome-lathusca block"
             style={{
-              fontSize: "clamp(2.6rem, 9vw, 4.2rem)",
-              color: "#FFFFFF",
-              letterSpacing: "0.13em",
-              textShadow: "0 2px 40px rgba(255, 255, 255, 0.18)",
+              fontSize: "clamp(3.8rem, 13vw, 6.5rem)",
+              color: "#2F4F3E",
+              lineHeight: 1.1,
+              textShadow: "0 2px 24px rgba(95, 125, 107, 0.18)",
             }}
           >
-            {siteConfig.couple.brideNickname.trim()}
+            {siteConfig.couple.groomNickname.trim()}
           </span>
         </h1>
 
@@ -361,11 +398,11 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         >
           <div
             className="h-px flex-1"
-            style={{ background: "linear-gradient(to left, rgba(255, 255, 255, 0.18), transparent)" }}
+            style={{ background: "linear-gradient(to left, rgba(47, 79, 62, 0.22), transparent)" }}
           />
           <span
             style={{
-              color: "rgba(255, 255, 255, 0.35)",
+              color: "rgba(47, 79, 62, 0.40)",
               fontSize: "5px",
               letterSpacing: "0.25em",
             }}
@@ -374,7 +411,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           </span>
           <div
             className="h-px flex-1"
-            style={{ background: "linear-gradient(to right, rgba(255, 255, 255, 0.18), transparent)" }}
+            style={{ background: "linear-gradient(to right, rgba(47, 79, 62, 0.22), transparent)" }}
           />
         </div>
 
@@ -395,11 +432,11 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         <p
           className={`mt-3 mb-9 leading-none ${vis(4)}`}
           style={{
-            fontFamily: '"Cinzel", serif',
+            fontFamily: '"lora-bold", serif',
             fontSize: "clamp(0.52rem, 1.4vw, 0.62rem)",
             letterSpacing: "0.42em",
             textTransform: "uppercase",
-            color: "rgba(255, 255, 255, 0.35)",
+            color: "rgba(47, 79, 62, 0.58)",
           }}
           aria-label={`${siteConfig.ceremony.day}, ${siteConfig.wedding.date} · ${siteConfig.ceremony.time}`}
         >
@@ -416,7 +453,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
             style={{
               fontFamily: '"Great Vibes", cursive',
             fontSize: "clamp(1.2rem, 3.5vw, 1.55rem)",
-            color: "rgba(255, 255, 255, 0.42)",
+            color: "rgba(95, 125, 107, 0.75)",
               marginBottom: "14px",
             }}
           >
@@ -432,7 +469,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
             {/* Track */}
             <div
               className="absolute inset-0 rounded-full"
-              style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}
+              style={{ backgroundColor: "rgba(95, 125, 107, 0.20)" }}
             />
             {/* Filled portion */}
             <div
@@ -441,7 +478,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                 width: `${Math.max(progress, 2)}%`,
                 transition: "width 200ms linear",
                 background:
-                  "linear-gradient(to right, rgba(180, 180, 180, 0.60), rgba(255, 255, 255, 0.95))",
+                  "linear-gradient(to right, rgba(47, 79, 62, 0.65), rgba(95, 125, 107, 0.90))",
               }}
             >
               {/* Travelling shimmer sweep */}
@@ -450,7 +487,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                 style={{
                   width: "50px",
                   background:
-                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.65) 50%, transparent 100%)",
+                    "linear-gradient(90deg, transparent 0%, rgba(167,191,169,0.50) 50%, transparent 100%)",
                 }}
               />
             </div>
@@ -463,7 +500,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
               fontFamily: '"Cinzel", serif',
               fontSize: "clamp(0.52rem, 1.4vw, 0.62rem)",
               letterSpacing: "0.35em",
-              color: "rgba(255, 255, 255, 0.32)",
+              color: "rgba(47, 79, 62, 0.50)",
             }}
             aria-live="polite"
           >

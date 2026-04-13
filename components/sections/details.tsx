@@ -509,7 +509,7 @@ export function Details() {
                 {siteConfig.dressCode.sponsors.palette.split(',').map((color) => (
                   <div
                     key={color.trim()}
-                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full shadow-md border border-white ring-2 ring-motif-silver/40 hover:scale-110 transition-transform duration-300"
+                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full ring-1 ring-gray-300/60 hover:scale-110 transition-transform duration-300"
                     style={{ backgroundColor: color.trim() }}
                     title={color.trim()}
                   />
@@ -519,7 +519,9 @@ export function Details() {
               {/* Sponsors Dress Code Text */}
               <div className="text-center pt-3 sm:pt-4 border-t border-motif-silver/70 px-3 sm:px-4">
                 <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed mb-2">
-                  <span className="font-semibold">{siteConfig.dressCode.sponsors.notes}</span>
+                  <span className="font-semibold">{siteConfig.dressCode.sponsors.male}</span>
+                  <br />
+                  <span className="font-semibold">{siteConfig.dressCode.sponsors.female}</span>
                 </p>
                 {/* <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed mb-2">
                   <span className="font-semibold">Palette inspiration:</span> {siteConfig.dressCode.colors}
@@ -568,7 +570,7 @@ export function Details() {
                 {siteConfig.dressCode.entourage.palette.split(',').map((color) => (
                   <div
                     key={color.trim()}
-                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full shadow-md border border-white ring-2 ring-motif-silver/40 hover:scale-110 transition-transform duration-300"
+                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full ring-1 ring-gray-300/60 hover:scale-110 transition-transform duration-300"
                     style={{ backgroundColor: color.trim() }}
                     title={color.trim()}
                   />
@@ -652,16 +654,16 @@ export function Details() {
               </div>
 
               {/* Color palette for principal sponsors — keep explicit dress-code colors (not UI palette) */}
-              {/* <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap mb-5 sm:mb-6 md:mb-7 px-2">
+              <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap mb-5 sm:mb-6 md:mb-7 px-2">
                 {siteConfig.dressCode.guests.palette.split(',').map((color) => (
                   <div
                     key={color.trim()}
-                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full shadow-md border border-white ring-2 ring-motif-silver/40 hover:scale-110 transition-transform duration-300"
+                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full ring-1 ring-gray-300/60 hover:scale-110 transition-transform duration-300"
                     style={{ backgroundColor: color.trim() }}
                     title={color.trim()}
                   />
                 ))}
-              </div> */}
+              </div>
               
               {/* Guests Dress Code Text */}
               <div className="text-center pt-3 sm:pt-4 border-t border-motif-silver/70 px-3 sm:px-4 mb-4">

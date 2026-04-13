@@ -20,6 +20,7 @@ export default function GalleryLayout({ children }: { children: React.ReactNode 
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-12 sm:h-14 flex items-center justify-between">
           <Link
             href="/#gallery"
+            onClick={() => sessionStorage.setItem("returnFromGallery", "true")}
             className="inline-flex items-center gap-1.5 sm:gap-2 font-semibold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border-2 transition-all duration-200 font-sans text-sm sm:text-base"
             style={{
               backgroundColor: "var(--color-motif-deep)",

@@ -167,13 +167,13 @@ export function Footer() {
 
         {/* Names & Date below illustration — dark text on white */}
         <div className="mt-3 sm:mt-4 md:mt-5 text-center">
-          <p className={`${cormorant.className} tracking-[0.25em] sm:tracking-[0.3em] text-xs sm:text-sm md:text-base uppercase`} style={{ color: palette.deep }}>
+          {/* <p className={`${cormorant.className} tracking-[0.25em] sm:tracking-[0.3em] text-xs sm:text-sm md:text-base uppercase`} style={{ color: palette.deep }}>
             {brideNickname} & {groomNickname}
           </p>
           <p className={`${cormorant.className} text-sm sm:text-base md:text-lg mt-1 sm:mt-2`} style={{ color: palette.deep }}>
             {ceremonyDate}
-          </p>
-          <p className={`${cormorant.className} text-xs sm:text-sm md:text-base mt-1 sm:mt-2`} style={{ color: palette.deep }}>
+          </p> */}
+          <p className={`${cormorant.className} text-xs sm:text-sm md:text-base`} style={{ color: palette.deep }}>
             { siteConfig.ceremony.location || siteConfig.reception.location}
           </p>
         </div>
@@ -192,7 +192,7 @@ export function Footer() {
                  className="lighten-regular text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] leading-tight"
                  style={{ color: 'var(--color-motif-deep)' }}
                 >
-                  {groomNickname} & {brideNickname}
+                  {brideNickname} & {groomNickname}
                   </h3>
               </div>
               <div className="space-y-2.5 sm:space-y-3 md:space-y-4">

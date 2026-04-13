@@ -34,7 +34,7 @@ cloudinary.config({
 // Constants — must stay in sync with lib/cloudinary.ts
 // ---------------------------------------------------------------------------
 
-const PROJECT_PREFIX = "wedding-projects/jennifer-and-patrick"
+const PROJECT_PREFIX = "wedding-projects/jezel-and-rodel"
 const SOURCE_DIR = path.resolve(process.cwd(), "public")
 
 const IMAGE_EXTENSIONS = new Set([
