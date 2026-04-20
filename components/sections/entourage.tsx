@@ -354,7 +354,7 @@ export function Entourage() {
       >
       {/* Corner floral decoration - softly tinted */}
       <div className="absolute inset-0 pointer-events-none z-[1]">
-        <CloudinaryImage
+        {/* <CloudinaryImage
           src="/decoration/flower-decoration-left-bottom-corner2.png"
           alt=""
           width={300}
@@ -389,14 +389,14 @@ export function Entourage() {
           className="absolute bottom-0 right-0 w-auto h-auto max-w-[140px] sm:max-w-[180px] md:max-w-[220px] opacity-20"
           style={{ transform: "scaleX(-1)", filter: "brightness(0) saturate(100%) invert(39%) sepia(18%) saturate(486%) hue-rotate(62deg) brightness(94%) contrast(88%)" }}
           priority={false}
-        />
+        /> */}
       </div>
 
       {/* Section Header */}
       <div className={`relative z-30 text-center mb-4 sm:mb-5 md:mb-6 px-3 sm:px-4 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"}`}>
         <p
           className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] mb-2`}
-          style={{ color: palette.softBrown }}
+          style={{ color: palette.deep }}
         >
           Those who stand with {siteConfig.couple.groomNickname} &amp; {siteConfig.couple.brideNickname}
         </p>
@@ -410,7 +410,7 @@ export function Entourage() {
 
         <p
           className={`${cormorant.className} text-xs sm:text-sm md:text-base mb-2 sm:mb-2.5 md:mb-3 italic opacity-90`}
-          style={{ color: palette.softBrown }}
+          style={{ color: palette.deep }}
         >
           Honoring those who share in our joy
         </p>

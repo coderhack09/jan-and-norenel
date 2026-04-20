@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { StorySection } from '@/components/StorySection';
 import { Cinzel } from "next/font/google";
 import { siteConfig } from '@/content/site';
@@ -16,10 +17,47 @@ const cinzel = Cinzel({
 
 export function LoveStory() {
   return (
-    <div className="min-h-screen bg-motif-cream overflow-x-hidden">
+    <div className="relative min-h-screen bg-motif-cream overflow-x-hidden">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
+        <Image
+          src="/decoration/new/left-top.png"
+          alt=""
+          width={260}
+          height={260}
+          className="absolute top-0 left-0 w-24 sm:w-32 md:w-40 lg:w-48 opacity-70"
+        />
+        <Image
+          src="/decoration/new/right-top.png"
+          alt=""
+          width={260}
+          height={260}
+          className="absolute top-0 right-0 w-24 sm:w-32 md:w-40 lg:w-48 opacity-70"
+        />
+        <Image
+          src="/decoration/new/left-bottom.png"
+          alt=""
+          width={300}
+          height={300}
+          className="absolute bottom-0 left-0 w-28 sm:w-36 md:w-44 lg:w-52 opacity-75"
+        />
+        <Image
+          src="/decoration/new/right-bottom.png"
+          alt=""
+          width={300}
+          height={300}
+          className="absolute bottom-0 right-0 w-28 sm:w-36 md:w-44 lg:w-52 opacity-75"
+        />
+
+        <span className="absolute top-[8%] left-[10%] h-6 w-6 rounded-full bg-motif-soft/35 blur-[1px]" />
+        <span className="absolute top-[18%] right-[14%] h-4 w-4 rounded-full bg-motif-accent/25 blur-[1px]" />
+        <span className="absolute top-[42%] left-[6%] h-8 w-8 rounded-full bg-motif-soft/25 blur-[2px]" />
+        <span className="absolute top-[58%] right-[8%] h-7 w-7 rounded-full bg-motif-accent/20 blur-[2px]" />
+        <span className="absolute bottom-[28%] left-[12%] h-5 w-5 rounded-full bg-motif-soft/30 blur-[1px]" />
+        <span className="absolute bottom-[16%] right-[16%] h-9 w-9 rounded-full bg-motif-accent/20 blur-[2px]" />
+      </div>
 
 
-      <div className="text-center text-motif-medium z-0 relative px-4">
+      <div className="text-center text-motif-medium z-10 relative px-4">
         <div className="w-12 sm:w-16 h-[1px] bg-motif-silver mx-auto mb-4 sm:mb-6 opacity-60"></div>
         <h1
            className="lighten-regular text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] leading-tight"
@@ -39,7 +77,7 @@ export function LoveStory() {
         layout="image-left"
         isFirst={true}
         title="A Love Meant to Last"
-        imageSrc="/mobile-background/couple (2).webp"
+        imageSrc="/mobile-background/couple (3).webp"
         text={
           <>
             <p className="mb-4">
@@ -71,7 +109,7 @@ export function LoveStory() {
         theme="light"
         layout="image-left"
         isLast={true}
-        imageSrc="/mobile-background/couple (13).webp"
+        imageSrc="/mobile-background/couple (15).webp"
         // title="The Proposal (2025)"
         text={
           <>
@@ -86,7 +124,7 @@ export function LoveStory() {
             <StorySection
         theme="dark"
         layout="image-right"
-        imageSrc="/mobile-background/couple (17).webp"
+        imageSrc="/mobile-background/couple (13).webp"
         // title="Became a Couple (2019)"
         text={
           <>
@@ -102,7 +140,7 @@ export function LoveStory() {
         theme="light"
         layout="image-left"
         isLast={true}
-        imageSrc="/mobile-background/couple (10).webp"
+        imageSrc="/mobile-background/couple (11).webp"
         // title="The Proposal (2025)"
         text={
           <>
@@ -115,7 +153,7 @@ export function LoveStory() {
       />
       
       {/* Footer Decoration */}
-      <div className="bg-motif-cream pt-8 sm:pt-10 md:pt-12 pb-16 sm:pb-20 md:pb-24 text-center text-motif-deep z-0 relative px-4">
+      <div className="bg-motif-cream pt-8 sm:pt-10 md:pt-12 pb-16 sm:pb-20 md:pb-24 text-center text-motif-deep z-10 relative px-4">
         <div className="w-12 sm:w-16 h-[1px] bg-motif-silver mx-auto mb-4 sm:mb-6 opacity-60"></div>
         <Link 
           href="#guest-list"

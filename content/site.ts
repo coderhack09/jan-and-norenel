@@ -1,10 +1,10 @@
 export const siteConfig = {
   couple: {
-    bride: "Jezel Mae A. Prudente ", //Noenyl Bryle M. Gonzaga
-    brideNickname: "Jezel Mae", //Ltryl
-    groom: "Rodel C. Campos", //Ltryl B. Benitez
-    groomNickname: "Rodel",
-    monogram:"/monogram/monogramnew.png" ,//Ltryl
+    bride: "Norenel T. Tolentino", //Noenyl Bryle M. Gonzaga
+    brideNickname: "Norenel", //Ltryl
+    groom: "Jan Chael Joven C. Elasigue", //Ltryl B. Benitez
+    groomNickname: "Jan",
+    monogram:"/monogram/monogram.png" ,//Ltryl
     backgroundMusic:"/background_music/Kay Tagal Kitang Hinintay - Spongecola (wedding version).mp3"
   },
   googleAPI:{
@@ -19,9 +19,9 @@ export const siteConfig = {
     googleShare: "https://docs.google.com/spreadsheets/d/1vZ5A4SKlFNHqU02P52OczTzgcaCBOvkop6Oxe2hZ59U/edit?usp=sharing",
   },
   wedding: {
-    date: "June 6, 2026",
-    time: "10:00 AM",
-    venue: "Sagrado Corazon De Jesus Nazareno Parish, Tagum City",
+    date: "October 30, 2026",
+    time: "4:00 PM",
+    venue: "Little Church of the West",
     tagline: "are getting married!",
     theme: "Our wedding palette is inspired by timeless elegance and warmth.Motif Colors: Champagne Gold, Soft Beige, Warm Soft Brown",
     motif: "#001F4B, #04396D, #015B97, #6497B2, #B2CDE0",
@@ -29,8 +29,8 @@ export const siteConfig = {
   details: {
     rsvp: {
       deadline: "MAY 30, 2026",
-      contact: "Jezel Mae A. Prudente",
-      phone: "0917 888 8888",
+      contact: "Norenel T. Tolentino",
+      phone: "0927 888 8888",
     },
   },
   giftRegistry: {
@@ -42,21 +42,21 @@ export const siteConfig = {
     },
   },
   ceremony: {
-    location: "Sagrado Corazon De Jesus Nazareno Parish",
-    venue: "Bermudez Compound, Apokon, Tagum City",
-    date: "June 6, 2026",
-    day: "Saturday",
-    time: "10:00 AM",
-    entourageTime: "9:00 AM",
-    guestsTime: "9:30 AM",
-    image: "/Details/reception.png",
+    location: "Little Church of the West",
+    venue: "4617 S. Las Vegas Blvd. Las Vegas, NV 89119 U.S.A",
+    date: "October 30, 2026",
+    day: "Friday",
+    time: "4:00 PM",
+    entourageTime: "3:00 PM",
+    guestsTime: "3:30 PM",
+    image: "/Details/ceremony1.png",
   },
   reception: {
-    location: "Sam's Center (just beside the church)",
-    venue: "Bermudez Compound, Apokon, Tagum City",
-    date: "May 22, 2026",
-    time: "12:00 PM",
-    image: ["/Details/reception1.png","/Details/receotion2.png"],
+    location: "The Jackpot Bar & Grill – Las Vegas",
+    venue: "4485 S. Jones Blvd. Las Vegas, NV 89103 U.S.A.",
+    date: "October 30, 2026",
+    time: "8:00 PM",
+    image: ["/Details/reception.png","/Details/reception_2.png"],
   },                          
   dressCode: {
       theme: "SEMI-FORMAL",
@@ -64,7 +64,7 @@ export const siteConfig = {
     sponsors: {
       male: "Gentlemen - Barong Tagalog/ Black Pants and Shoes/ White Shirt",
       female: "Ladies - Filipiniana-inspired design in beige or champagne tones",
-      notes: "Principal sponsors: \n Gentlemen - Barong Tagalog/ Black Pants and Shoes/ White Shirt  \nLadies - Filipiniana-inspired design in beige or champagne tones",
+      notes: "Bridesmaids are requested to wear a long gown in plain purple fabric, with any preferred design. \nGroomsmen are requested to wear a light gray suit paired with a white long-sleeved inner shirt, without a vest, and purple neckties, which will be provided by the couple for uniformity.",
       photo: "/Details/sponsors.png",
       palette: "#A68A75,#D6BFA3, #F5EFE6,#EDE3D6",
     },
@@ -72,12 +72,12 @@ export const siteConfig = {
       gents: "Guests are kindly requested to wear attire in any of the shades within our wedding palette.Color pallet and image to be followed. STRICTLY no shorts, maong jeans, t-shirts, or slippers.",
       ladies: "Guests are kindly requested to wear attire in any of the shades within our wedding palette.Color pallet and image to be followed. STRICTLY no shorts, maong jeans, t-shirts, or slippers.",
       notes: "To complement our wedding motif, we respectfully request semi-formal attire in sage green or inspired tones for all guests",
-      photo: "/Details/Guest.png",
+      photo: ["/Details/Guest.png","/Details/Guest_2.png"],
       palette: " #2F4F3E, #5F7D6B, #A7BFA9, #F4F6F2",
     },
     entourage: {
       notes: "Ladies are requested to wear sage green dresses or gowns (or inspired shades), while gentlemen may wear a sage green coat and tie (or inspired tones).",
-      photo: "/Details/entourage.png",
+      photo: "/Details/entourage.jpeg",
       palette: "#2F4F3E, #5F7D6B, #A7BFA9, #F4F6F2"
     },
     note: "Ladies are requested to wear sage green dresses or gowns (or inspired shades), while gentlemen may wear a sage green coat and tie (or inspired tones)."
@@ -111,7 +111,7 @@ Now, as they prepare to say yes before God and the people they love most, Cather
   },
   snapShare: {
     googleDriveLink: "https://drive.google.com/drive/folders/1cCo5WtCNhquk86sm0zR6E8FNI3VzAnEv?usp=sharing",
-    hashtag: ["#JezelAndRodel","#JezelAndRodelWedding"],
+    hashtag: ["#NorenelAndJanChael","#NorenelAndJanChaelWedding"],
     instructions: "Please scan this QR Code, create a folder with your name and upload the photos and videos you have taken during our wedding reception. We are delighted to see your snaps too!",
   },
 }

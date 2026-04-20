@@ -126,7 +126,7 @@ export function Details() {
       {/* Flower decoration - top left corner */}
       <div className="absolute left-0 top-0 z-0 pointer-events-none">
         <CloudinaryImage
-          src="/decoration/flower-decoration-left-bottom-corner2.png"
+          src="/decoration/new/left-bottom.png"
           alt=""
           width={300}
           height={300}
@@ -139,7 +139,7 @@ export function Details() {
       {/* Flower decoration - top right corner */}
       <div className="absolute right-0 top-0 z-0 pointer-events-none">
         <CloudinaryImage
-          src="/decoration/flower-decoration-left-bottom-corner2.png"
+          src="/decoration/new/left-bottom.png"
           alt=""
           width={300}
           height={300}
@@ -152,7 +152,7 @@ export function Details() {
       {/* Flower decoration - left bottom corner */}
       <div className="absolute left-0 bottom-0 z-0 pointer-events-none">
         <CloudinaryImage
-          src="/decoration/flower-decoration-left-bottom-corner2.png"
+          src="/decoration/new/left-bottom.png"
           alt=""
           width={300}
           height={300}
@@ -165,7 +165,7 @@ export function Details() {
       {/* Flower decoration - right bottom corner */}
       <div className="absolute right-0 bottom-0 z-0 pointer-events-none">
         <CloudinaryImage
-          src="/decoration/flower-decoration-left-bottom-corner2.png"
+          src="/decoration/new/left-bottom.png"
           alt=""
           width={300}
           height={300}
@@ -189,7 +189,7 @@ export function Details() {
           Event Details
         </h2>
         <p
-          className="text-xs sm:text-sm md:text-base text-motif-medium font-normal max-w-xl mx-auto leading-relaxed tracking-[0.14em] px-4"
+          className="text-xs sm:text-sm md:text-base text-motif-deep font-normal max-w-xl mx-auto leading-relaxed tracking-[0.14em] px-4"
         >
           Everything you need to know about our special day.
         </p>
@@ -236,13 +236,13 @@ export function Details() {
               {/* Date Section */}
               <div className="text-center mb-5 sm:mb-8 md:mb-10">
                 {/* Day name */}
-                <p className="text-[10px] sm:text-xs md:text-sm font-semibold text-motif-medium uppercase tracking-[0.2em] mb-2 sm:mb-3">
+                <p className="text-[10px] sm:text-xs md:text-sm font-semibold text-motif-deep uppercase tracking-[0.2em] mb-2 sm:mb-3">
                   {siteConfig.ceremony.day}
                 </p>
                 
                 {/* Month - Script style with warm gold */}
                 <div className="mb-2 sm:mb-4">
-                  <p className="lighten-regular text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] leading-tight" style={{ color: 'var(--color-motif-medium)' }}>
+                  <p className="lighten-regular text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] leading-tight" style={{ color: 'var(--color-motif-deep)' }}>
                   {new Date(siteConfig.ceremony.date).toLocaleString('default', { month: 'long' })}
                   </p>
                 </div>
@@ -469,247 +469,189 @@ export function Details() {
             Attire Guidelines
           </h3>
           <p
-            className="text-sm sm:text-base md:text-lg text-motif-medium font-normal"
+            className="text-sm sm:text-base md:text-lg text-motif-deep font-normal"
           >
             Please dress according to the guidelines below.
           </p>
         </div>
                 {/* Attire Cards */}
-                <div className="space-y-5 sm:space-y-6 md:space-y-8">
-          {/* Principal Sponsor Attire */}
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-br from-motif-silver/22 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
-            
-            <div className="relative bg-motif-cream backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border  hover:shadow-[0_20px_48px_rgba(0,0,0,0.24)] hover:border-motif-deep/70 transition-all duration-300">
-              <h4
-                className="lighten-regular text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] leading-tight text-center mb-4 sm:mb-5 md:mb-6 "
-                style={{ color: 'var(--color-motif-deep)' }}
-              >
-                Principal Sponsors: 
-              </h4>
-
-              {/* Copy: follow color palette */}
-              {/* <p className={`${cinzel.className} text-center text-xs sm:text-sm md:text-base lg:text-lg text-motif-deep/90 font-light leading-relaxed mb-4 sm:mb-5 md:mb-6 max-w-xl mx-auto px-3`}>
-                Please follow the color palette below for your outfit.
-              </p> */}
-
-              {/* Principal sponsor attire image */}
-              <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-motif-medium/30 mb-4 sm:mb-6 md:mb-8">
-                <CloudinaryImage
-                  src={siteConfig.dressCode.sponsors.photo}
-                  alt="Principal sponsor attire — follow the color palette"
-                  fill
-                  className="object-contain bg-[#FFF7F6]/50 p-2 sm:p-3"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 672px"
-                />
-              </div>
-
-              {/* Color palette for principal sponsors — keep explicit dress-code colors (not UI palette) */}
-              <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap mb-5 sm:mb-6 md:mb-7 px-2">
-                {siteConfig.dressCode.sponsors.palette.split(',').map((color) => (
-                  <div
-                    key={color.trim()}
-                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full ring-1 ring-gray-300/60 hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: color.trim() }}
-                    title={color.trim()}
-                  />
-                ))}
-              </div>
-              
-              {/* Sponsors Dress Code Text */}
-              <div className="text-center pt-3 sm:pt-4 border-t border-motif-silver/70 px-3 sm:px-4">
-                <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed mb-2">
-                  <span className="font-semibold">{siteConfig.dressCode.sponsors.male}</span>
-                  <br />
-                  <span className="font-semibold">{siteConfig.dressCode.sponsors.female}</span>
-                </p>
-                {/* <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed mb-2">
-                  <span className="font-semibold">Palette inspiration:</span> {siteConfig.dressCode.colors}
-                </p>
-                <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed italic">
-                  {siteConfig.dressCode.note}
-                </p> */}
-              </div>
-            </div>
-          </div>
-
-        </div>
+      
 
                 {/* Entourage Attire Cards */}
                 <div className="space-y-5 sm:space-y-6 md:space-y-8 mb-4">
-          {/* Guests Attire */}
+
+          {/* Parents */}
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-br from-motif-silver/22 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
-            
-            <div className="relative bg-motif-cream backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border  hover:shadow-[0_20px_48px_rgba(0,0,0,0.24)] hover:border-motif-deep/70 transition-all duration-300">
+            <div className="relative bg-motif-cream backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border hover:shadow-[0_20px_48px_rgba(0,0,0,0.24)] hover:border-motif-deep/70 transition-all duration-300">
               <h4
-                className="lighten-regular text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] leading-tight text-center mb-4 sm:mb-5 md:mb-6 "
+                className="lighten-regular text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] leading-tight text-center mb-4 sm:mb-5 md:mb-6"
                 style={{ color: 'var(--color-motif-deep)' }}
               >
-                Entourage  & Secondary Attire 
+                For Parents
               </h4>
-
-              {/* Copy: follow color palette */}
-              {/* <p className="text-center text-xs sm:text-sm md:text-base lg:text-lg text-motif-deep/90 font-light leading-relaxed mb-4 sm:mb-5 md:mb-6 max-w-xl mx-auto px-3">
-              Kindly follow the color palette below for your outfit.
-              </p> */}
-
-              {/* Principal sponsor attire image */}
               <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-motif-medium/30 mb-4 sm:mb-6 md:mb-8">
                 <CloudinaryImage
-                  src={siteConfig.dressCode.entourage.photo}
-                  alt={siteConfig.dressCode.entourage.notes}
+                  src="/Details/parents.jpeg"
+                  alt="Parents attire — sage green"
                   fill
                   className="object-contain bg-[#FFF7F6]/50 p-2 sm:p-3"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 672px"
                 />
               </div>
-
-              {/* Color palette for principal sponsors — keep explicit dress-code colors (not UI palette) */}
-              <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap mb-5 sm:mb-6 md:mb-7 px-2">
-                {siteConfig.dressCode.entourage.palette.split(',').map((color) => (
-                  <div
-                    key={color.trim()}
-                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full ring-1 ring-gray-300/60 hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: color.trim() }}
-                    title={color.trim()}
-                  />
-                ))}
+              <div className="pt-3 sm:pt-4 border-t border-motif-silver/70 px-3 sm:px-4 max-w-2xl mx-auto space-y-3 sm:space-y-4">
+                <div className="flex gap-3 items-start">
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-motif-deep/30" aria-hidden="true" />
+                  <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed">
+                    <span className="font-semibold">Mothers —</span> Long gown, any design, in <span className="font-semibold">sage green</span>.
+                  </p>
+                </div>
+                <div className="flex gap-3 items-start">
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-motif-deep/30" aria-hidden="true" />
+                  <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed">
+                    <span className="font-semibold">Fathers —</span> Dark gray / charcoal suit, white inner shirt or long sleeves, no vest, with a <span className="font-semibold">sage green necktie</span>. <span className="italic text-motif-deep/70">(Neckties are provided by the bride and groom for uniformity of color.)</span>
+                  </p>
+                </div>
               </div>
-              
-              {/* Guests Dress Code Text */}
-              <div className="text-center pt-3 sm:pt-4 border-t border-motif-silver/70 px-3 sm:px-4 mb-4">
-                <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed mb-2">
-                  <span className="font-semibold">{siteConfig.dressCode.entourage.notes}</span>
-                  <br />
-               
-                </p>
-                {/* <div className="mt-3 sm:mt-4 text-left max-w-2xl mx-auto">
-                  <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
-                    <span className="inline-flex h-2 w-2 rounded-full bg-motif-accent/80" aria-hidden="true" />
-                    <p className={`${cinzel.className} text-[11px] sm:text-xs tracking-[0.22em] uppercase text-motif-deep/80`}>
-                      Notes
-                    </p>
-                    <span className="hidden sm:block h-px flex-1 bg-motif-deep/15" aria-hidden="true" />
-                  </div>
+            </div>
+          </div>
 
-                  <ul className="space-y-2 sm:space-y-2.5">
-                    <li className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-motif-deep/40" aria-hidden="true" />
-                      <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-motif-deep/90 leading-relaxed">
-                        Ladies, we know you’d look beautiful in white—but let’s save that for the bride.
-                      </p>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-motif-deep/40" aria-hidden="true" />
-                      <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-motif-deep/90 leading-relaxed">
-                        We kindly encourage everyone to avoid casual attire such as jeans, shorts, slippers, and sando.
-                      </p>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-motif-deep/40" aria-hidden="true" />
-                      <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-motif-deep/90 leading-relaxed">
-                        We also gently discourage wearing all or predominantly black outfits to match the bright and joyful mood of our wedding celebration.
-                      </p>
-                    </li>
-                  </ul>
-                </div> */}
-                {/* <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed italic">
-                  {siteConfig.dressCode.note}
-                </p> */}
+          {/* Principal Sponsors */}
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-br from-motif-silver/22 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+            <div className="relative bg-motif-cream backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border hover:shadow-[0_20px_48px_rgba(0,0,0,0.24)] hover:border-motif-deep/70 transition-all duration-300">
+              <h4
+                className="lighten-regular text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] leading-tight text-center mb-4 sm:mb-5 md:mb-6"
+                style={{ color: 'var(--color-motif-deep)' }}
+              >
+                Principal Sponsors
+              </h4>
+              <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-motif-medium/30 mb-4 sm:mb-6 md:mb-8">
+                <CloudinaryImage
+                  src="/Details/principal.jpeg"
+                  alt="Principal sponsors attire — shades of pink"
+                  fill
+                  className="object-contain bg-[#FFF7F6]/50 p-2 sm:p-3"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 672px"
+                />
+              </div>
+              <div className="pt-3 sm:pt-4 border-t border-motif-silver/70 px-3 sm:px-4 max-w-2xl mx-auto space-y-3 sm:space-y-4">
+                <div className="flex gap-3 items-start">
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-motif-deep/30" aria-hidden="true" />
+                  <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed">
+                    <span className="font-semibold">Ninangs —</span> Long gown, any design, in <span className="font-semibold">plain shades of pink</span> fabric.
+                  </p>
+                </div>
+                <div className="flex gap-3 items-start">
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-motif-deep/30" aria-hidden="true" />
+                  <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed">
+                    <span className="font-semibold">Ninongs —</span> Dark gray / charcoal suit, white inner shirt, no vest, with a <span className="font-semibold">pink necktie</span>. <span className="italic text-motif-deep/70">(Neckties are provided by the bride and groom for uniformity of color.)</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Entourage */}
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-br from-motif-silver/22 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+            <div className="relative bg-motif-cream backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border hover:shadow-[0_20px_48px_rgba(0,0,0,0.24)] hover:border-motif-deep/70 transition-all duration-300">
+              <h4
+                className="lighten-regular text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] leading-tight text-center mb-4 sm:mb-5 md:mb-6"
+                style={{ color: 'var(--color-motif-deep)' }}
+              >
+                Entourage
+              </h4>
+
+              <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-motif-medium/30 mb-4 sm:mb-6 md:mb-8">
+                <CloudinaryImage
+                  src="/Details/entourage.jpeg"
+                  alt="Entourage attire — purple"
+                  fill
+                  className="object-contain bg-[#FFF7F6]/50 p-2 sm:p-3"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 672px"
+                />
+              </div>
+              <div className="pt-3 sm:pt-4 border-t border-motif-silver/70 px-3 sm:px-4 max-w-2xl mx-auto space-y-3 sm:space-y-4">
+                <div className="flex gap-3 items-start">
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-motif-deep/30" aria-hidden="true" />
+                  <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed">
+                    <span className="font-semibold">Bridesmaids —</span> Long gown, any design, in <span className="font-semibold">plain purple</span> fabric.
+                  </p>
+                </div>
+                <div className="flex gap-3 items-start">
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-motif-deep/30" aria-hidden="true" />
+                  <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed">
+                    <span className="font-semibold">Groomsmen —</span> Light gray suit, white inner shirt or long sleeves, no vest, with <span className="font-semibold">purple neckties</span>. <span className="italic text-motif-deep/70">(Neckties are provided by the bride and groom for uniformity of color.)</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bearers */}
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-br from-motif-silver/22 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+            <div className="relative bg-motif-cream backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border hover:shadow-[0_20px_48px_rgba(0,0,0,0.24)] hover:border-motif-deep/70 transition-all duration-300">
+              <h4
+                className="lighten-regular text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] leading-tight text-center mb-4 sm:mb-5 md:mb-6"
+                style={{ color: 'var(--color-motif-deep)' }}
+              >
+                For Bearers
+              </h4>
+              <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-motif-medium/30 mb-4 sm:mb-6 md:mb-8">
+                <CloudinaryImage
+                  src="/Details/ringbearer.jpeg"
+                  alt="Bearers attire — black suit with pink bow tie"
+                  fill
+                  className="object-contain bg-[#FFF7F6]/50 p-2 sm:p-3"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 672px"
+                />
+              </div>
+              <div className="pt-3 sm:pt-4 border-t border-motif-silver/70 px-3 sm:px-4 max-w-2xl mx-auto space-y-3 sm:space-y-4">
+                <div className="flex gap-3 items-start">
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-motif-deep/30" aria-hidden="true" />
+                  <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed">
+                    <span className="font-semibold">Bearers —</span> Black suit, white inner shirt or long sleeves, with vest, and a <span className="font-semibold">pink bow tie</span>. <span className="italic text-motif-deep/70">(Bow ties are provided by the bride and groom for uniformity of color.)</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Flower Girls */}
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-br from-motif-silver/22 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+            <div className="relative bg-motif-cream backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border hover:shadow-[0_20px_48px_rgba(0,0,0,0.24)] hover:border-motif-deep/70 transition-all duration-300">
+              <h4
+                className="lighten-regular text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] leading-tight text-center mb-4 sm:mb-5 md:mb-6"
+                style={{ color: 'var(--color-motif-deep)' }}
+              >
+                Flower Girls
+              </h4>
+              <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-motif-medium/30 mb-4 sm:mb-6 md:mb-8">
+                <CloudinaryImage
+                  src="/Details/flowergirl.jpeg"
+                  alt="Flower girls attire — plain pink gown"
+                  fill
+                  className="object-contain bg-[#FFF7F6]/50 p-2 sm:p-3"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 672px"
+                />
+              </div>
+              <div className="pt-3 sm:pt-4 border-t border-motif-silver/70 px-3 sm:px-4 max-w-2xl mx-auto space-y-3 sm:space-y-4">
+                <div className="flex gap-3 items-start">
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-motif-deep/30" aria-hidden="true" />
+                  <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed">
+                    <span className="font-semibold">Flower Girls —</span> Long gown in <span className="font-semibold">plain pink</span> fabric.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* Attire Cards */}
-        <div className="space-y-5 sm:space-y-6 md:space-y-8 mb-4">
-          {/* Guests Attire */}
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-br from-motif-silver/22 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
-            
-            <div className="relative bg-motif-cream backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border  hover:shadow-[0_20px_48px_rgba(0,0,0,0.24)] hover:border-motif-deep/70 transition-all duration-300">
-              <h4
-                className="lighten-regular text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] leading-tight text-center mb-4 sm:mb-5 md:mb-6 "
-                style={{ color: 'var(--color-motif-deep)' }}
-              >
-                Guest Attire
-              </h4>
 
-              {/* Copy: follow color palette */}
-              <p className="text-center text-xs sm:text-sm md:text-base lg:text-lg text-motif-deep/90 font-light leading-relaxed mb-4 sm:mb-5 md:mb-6 max-w-xl mx-auto px-3">
-              Kindly follow the color palette below for your outfit.
-              </p>
-
-              {/* Principal sponsor attire image */}
-              <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-motif-medium/30 mb-4 sm:mb-6 md:mb-8">
-                <CloudinaryImage
-                  src={siteConfig.dressCode.guests.photo}
-                  alt={siteConfig.dressCode.guests.notes}
-                  fill
-                  className="object-contain bg-[#FFF7F6]/50 p-2 sm:p-3"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 672px"
-                />
-              </div>
-
-              {/* Color palette for principal sponsors — keep explicit dress-code colors (not UI palette) */}
-              <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap mb-5 sm:mb-6 md:mb-7 px-2">
-                {siteConfig.dressCode.guests.palette.split(',').map((color) => (
-                  <div
-                    key={color.trim()}
-                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full ring-1 ring-gray-300/60 hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: color.trim() }}
-                    title={color.trim()}
-                  />
-                ))}
-              </div>
-              
-              {/* Guests Dress Code Text */}
-              <div className="text-center pt-3 sm:pt-4 border-t border-motif-silver/70 px-3 sm:px-4 mb-4">
-                <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed mb-2">
-                  <span className="font-semibold">{siteConfig.dressCode.guests.notes}</span>
-                  <br />
-               
-                </p>
-                {/* <div className="mt-3 sm:mt-4 text-left max-w-2xl mx-auto">
-                  <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
-                    <span className="inline-flex h-2 w-2 rounded-full bg-motif-accent/80" aria-hidden="true" />
-                    <p className={`${cinzel.className} text-[11px] sm:text-xs tracking-[0.22em] uppercase text-motif-deep/80`}>
-                      Notes
-                    </p>
-                    <span className="hidden sm:block h-px flex-1 bg-motif-deep/15" aria-hidden="true" />
-                  </div>
-
-                  <ul className="space-y-2 sm:space-y-2.5">
-                    <li className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-motif-deep/40" aria-hidden="true" />
-                      <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-motif-deep/90 leading-relaxed">
-                        Ladies, we know you’d look beautiful in white—but let’s save that for the bride.
-                      </p>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-motif-deep/40" aria-hidden="true" />
-                      <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-motif-deep/90 leading-relaxed">
-                        We kindly encourage everyone to avoid casual attire such as jeans, shorts, slippers, and sando.
-                      </p>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-motif-deep/40" aria-hidden="true" />
-                      <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-motif-deep/90 leading-relaxed">
-                        We also gently discourage wearing all or predominantly black outfits to match the bright and joyful mood of our wedding celebration.
-                      </p>
-                    </li>
-                  </ul>
-                </div> */}
-                {/* <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed italic">
-                  {siteConfig.dressCode.note}
-                </p> */}
-              </div>
-            </div>
-          </div>
-
-        </div>
 
      {/* Gentle Reminders Container */}
      <div className="relative z-10 max-w-4xl mx-auto px-3 sm:px-5 mt-8 sm:mt-12 md:mt-16">

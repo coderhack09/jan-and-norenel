@@ -12,10 +12,6 @@ import { getCloudinaryUrl } from "@/lib/cloudinary"
 // Palette lives in globals.css → @theme inline → --color-motif-*
 // Edit there once to update every component.
 
-// CSS filter approximation of --color-motif-deep (sage green). Tune if needed.
-const GALLERY_DECO_FILTER = ""
-  // "brightness(0) saturate(100%) invert(37%) sepia(20%) saturate(500%) hue-rotate(80deg) brightness(88%) contrast(92%)"
-
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400"],
@@ -135,44 +131,46 @@ export function Gallery() {
         id="gallery"
         className="relative z-10 py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
       >
-      {/* Corner floral decoration - aligned with Details section */}
+      {/* Corner decoration + bubbles */}
       <div className="absolute inset-0 pointer-events-none z-[1]">
         <CloudinaryImage
-          src="/decoration/flower-decoration-left-bottom-corner2.png"
+          src="/decoration/new/left-top.png"
           alt=""
           width={300}
           height={300}
           className="absolute top-0 left-0 w-auto h-auto max-w-[120px] sm:max-w-[160px] md:max-w-[200px]"
-          style={{ transform: "scaleY(-1)", filter: GALLERY_DECO_FILTER }}
           priority={false}
         />
         <CloudinaryImage
-          src="/decoration/flower-decoration-left-bottom-corner2.png"
+          src="/decoration/new/right-top.png"
           alt=""
           width={300}
           height={300}
           className="absolute top-0 right-0 w-auto h-auto max-w-[120px] sm:max-w-[160px] md:max-w-[200px]"
-          style={{ transform: "scaleX(-1) scaleY(-1)", filter: GALLERY_DECO_FILTER }}
           priority={false}
         />
         <CloudinaryImage
-          src="/decoration/flower-decoration-left-bottom-corner2.png"
+          src="/decoration/new/left-bottom.png"
           alt=""
           width={300}
           height={300}
           className="absolute bottom-0 left-0 w-auto h-auto max-w-[120px] sm:max-w-[160px] md:max-w-[200px]"
-          style={{ filter: GALLERY_DECO_FILTER }}
           priority={false}
         />
         <CloudinaryImage
-          src="/decoration/flower-decoration-left-bottom-corner2.png"
+          src="/decoration/new/right-bottom.png"
           alt=""
           width={300}
           height={300}
           className="absolute bottom-0 right-0 w-auto h-auto max-w-[120px] sm:max-w-[160px] md:max-w-[200px]"
-          style={{ transform: "scaleX(-1)", filter: GALLERY_DECO_FILTER }}
           priority={false}
         />
+
+        <span className="absolute top-[10%] left-[8%] h-6 w-6 rounded-full bg-motif-soft/30 blur-[1px]" />
+        <span className="absolute top-[18%] right-[12%] h-4 w-4 rounded-full bg-motif-accent/25 blur-[1px]" />
+        <span className="absolute top-[44%] right-[7%] h-7 w-7 rounded-full bg-motif-soft/25 blur-[2px]" />
+        <span className="absolute bottom-[34%] left-[10%] h-5 w-5 rounded-full bg-motif-accent/25 blur-[1px]" />
+        <span className="absolute bottom-[18%] right-[14%] h-8 w-8 rounded-full bg-motif-soft/20 blur-[2px]" />
       </div>
 
       {/* Header — wedding palette & copy */}

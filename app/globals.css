@@ -88,11 +88,12 @@
   --font-serif: "Great Vibes", "Great Vibes Fallback";
 
   /* ─── Motif palette — edit here, affects every component ─── */
-  --color-motif-deep:    #2F4F3E;  /* deep sage green - headings */
-  --color-motif-medium:  #5F7D6B;  /* classic sage - body text */
-  --color-motif-accent:  #A7BFA9;  /* light sage - highlights */
-  --color-motif-cream:   #F4F6F2;  /* soft watercolor background */
-  --color-motif-soft:    #DDE6DD;  /* pale sage - cards / sections */  /* secondary text */  /* muted silver text/icons */  /* cool neutral divider */  /* neutral divider */
+  --color-motif-deep:    #8C4B63;  /* sage green - primary (headings) */
+  --color-motif-medium:  #C1A1D6;  /* muted sage - body text */
+  --color-motif-accent:  #FAD1DA;  /* dusty pink - buttons/highlights */
+  --color-motif-cream:   #F8F0F3;  /* warm white background */
+  --color-motif-soft:    #FAD1DA;  /* soft lavender - sections/cards */
+  --color-motif-silver:  #848B7B;  /* neutral divider */  /* neutral divider */  /* pale sage - cards / sections */  /* secondary text */  /* muted silver text/icons */  /* cool neutral divider */  /* neutral divider */
   /* ─────────────────────────────────────────────────────────── */
   --font-imperial-script: "Imperial Script", cursive;
   --color-background: var(--background);
@@ -233,6 +234,51 @@ html {
 
 .symphony-pro-regular {
   font-family: "SymphonyPro", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ── Better Saturday font ── */
+@font-face {
+  font-family: "BetterSaturday";
+  src: url("/fonts/BetterSaturday.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.better-saturday {
+  font-family: "BetterSaturday", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ── Glacial Indifference font ── */
+@font-face {
+  font-family: "GlacialIndifference";
+  src: url("/fonts/GlacialIndifference-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.glacial-indifference {
+  font-family: "GlacialIndifference", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ── Quicksand Book font ── */
+@font-face {
+  font-family: "QuicksandBook";
+  src: url("/fonts/Quicksand-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.quicksand-book {
+  font-family: "QuicksandBook", sans-serif;
   font-weight: 400;
   font-style: normal;
 }

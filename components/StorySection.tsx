@@ -35,7 +35,7 @@ export const StorySection: React.FC<StorySectionProps> = ({
 }) => {
   const isDark = theme === 'dark';
   // Palette lives in globals.css → @theme inline → --color-motif-*
-  const bgColor = isDark ? 'bg-motif-deep' : 'bg-motif-cream relative z-10';
+  const bgColor = isDark ? 'bg-motif-silver' : 'bg-motif-cream relative z-10';
   const textColor = isDark ? 'text-motif-cream' : 'text-motif-deep';
   
   // Animation Hook
@@ -57,8 +57,8 @@ export const StorySection: React.FC<StorySectionProps> = ({
 
   // Visual Styles
   const imageFrameClass = isDark 
-    ? 'bg-motif-cream p-1.5 md:p-3 shadow-lg' 
-    : 'bg-motif-cream p-1.5 md:p-3 shadow-md';
+    ? 'bg-motif-soft p-1.5 md:p-3 shadow-lg' 
+    : 'bg-motif-silver p-1.5 md:p-3 shadow-md';
 
   // Rotation
   const rotation = layout === 'image-left' ? 'rotate-1 md:rotate-2' : '-rotate-1 md:-rotate-2';

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { siteConfig } from '@/content/site';
 import { CloudinaryImage } from '@/components/ui/cloudinary-image';
 
@@ -7,65 +7,8 @@ interface HeroProps {
   visible: boolean;
 }
 
-// Background (beige)          #F5EFE6
-// Section Alternate           #E8DCCB
-// Soft Brown (headings)       #8B6F5A
-// Deep Brown (accents/shadow) #4E3B31
-// Champagne Gold (buttons)    #D6BFA3
-// Champagne Hover (richer)    #C9A989
-// Borders / Dividers          #F2E4D3
-  // Palette tuned for champagne gold + beige + soft brown
- // Palette tuned to motif: sage green, muted sage, warm ivory, powder blue, steel blue, luxury silver
- const palette = {
-  deep: '--color-motif-deep',    // sage green — primary elegance, headings, borders
-  medium: '--color-motif-medium',  // soft muted sage — secondary text, subtle elements
-  accent: '--color-motif-accent',  // steel blue — deeper accent, hashtag, dividers
-  cream: '--color-motif-cream',   // warm ivory — surfaces, overlays, light text on dark
-  soft: '--color-motif-soft',    // powder blue — highlights, glow accents, progress fill
-  silver: '--color-motif-silver',  // luxury silver — neutral separators, track backgrounds
-};
-
-
-const desktopImages: string[] = [
-  '/desktop-background/couple (1).webp',
-  '/desktop-background/couple (2).webp',
-  '/desktop-background/couple (3).webp',
-  '/desktop-background/couple (4).webp',
-  '/desktop-background/couple (5).webp'
-];
-
-const mobileImages: string[] = [
-'/mobile-background/couple (17).webp',
-  '/mobile-background/couple (23).webp',
-  '/mobile-background/couple (9).webp',
-  '/mobile-background/couple (2).webp',
-  '/mobile-background/couple (4).webp'
-];
-
 export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
-  const [index, setIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    if (typeof window === 'undefined') return;
-
-    const media = window.matchMedia('(max-width: 768px)');
-    const handleChange = () => setIsMobile(media.matches);
-    handleChange();
-    media.addEventListener('change', handleChange);
-    return () => media.removeEventListener('change', handleChange);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % 5);
-    }, 5500);
-    return () => clearInterval(timer);
-  }, [mounted]);
 
   useEffect(() => {
     if (visible) {
@@ -94,38 +37,38 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
     };
   }, []);
 
-  const images = useMemo(() => (isMobile ? mobileImages : desktopImages), [isMobile]);
-
   return (
       <div className={`fixed inset-0 z-30 flex items-center justify-center overflow-hidden transition-opacity duration-500 ${visible ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
-      {/* Background Image Carousel */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        {images.map((src, i) => (
-          <div
-            key={src}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${i === index ? 'opacity-100' : 'opacity-0'}`}
-            style={{
-              transform: i === index ? 'scale(1)' : 'scale(1.05)',
-              transition: 'opacity 1s ease-in-out, transform 1s ease-in-out'
-            }}
-          >
-            <CloudinaryImage
-              src={src}
-              alt="Couple"
-              fill
-              quality={90}
-              priority={i === 0}
-              className="object-cover"
-              sizes="100vw"
-            />
-          </div>
-        ))}
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          disablePictureInPicture
+          aria-hidden="true"
+        >
+          <source src="/background_music/Rotating Sparkles on Pink Purple Free Background Videos, No Copyright All Background Videos - All Background Videos (720p, h264) (online-video-cutter.com).mp4" type="video/mp4" />
+        </video>
         
-        {/* Linear gradient overlay for text readability */}
+        {/* Subtle tint keeps text readable while preserving video visibility */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to bottom, rgba(47,79,62,0.55) 0%, rgba(47,79,62,0.15) 40%, rgba(47,79,62,0.15) 60%, rgba(47,79,62,0.72) 100%)'
+            background:
+              'linear-gradient(180deg, rgba(14,34,46,0.22) 0%, rgba(28,53,69,0.15) 50%, rgba(51,35,62,0.25) 100%)',
+          }}
+        />
+
+        {/* Soft color bloom for a subtle premium look */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(circle at 15% 20%, rgba(142, 184, 214, 0.18) 0%, rgba(142, 184, 214, 0) 45%), radial-gradient(circle at 85% 80%, rgba(194, 163, 216, 0.14) 0%, rgba(194, 163, 216, 0) 42%)',
           }}
         />
       </div>
@@ -201,23 +144,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
               contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{
-              backgroundColor: 'var(--color-motif-deep)',
+              backgroundColor: 'var(--color-motif-cream)',
               borderColor: 'var(--color-motif-deep)',
-              color: 'var(--color-motif-cream)',
+              color: 'var(--color-motif-deep)',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--color-motif-deep)';
+              e.currentTarget.style.backgroundColor = 'var(--color-motif-cream)';
               e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.borderColor = 'var(--color-motif-medium)';
+              e.currentTarget.style.borderColor = 'var(--color-motif-deep)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--color-motif-deep)';
+              e.currentTarget.style.backgroundColor = 'var(--color-motif-cream)';
               e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.borderColor = 'var(--color-motif-medium)';
+              e.currentTarget.style.borderColor = 'var(--color-motif-deep)';
             }}
           >
             <span
-              style={{ fontFamily: '"Cinzel", serif', fontWeight: 500, color: 'var(--color-motif-cream)' }}
+              style={{ fontFamily: '"Cinzel", serif', fontWeight: 500, color: 'var(--color-motif-deep)' }}
             >
               Open Invitation
             </span>

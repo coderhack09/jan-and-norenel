@@ -27,7 +27,7 @@ const palette = {
 } as const
 
 const DECO_FILTER =
-  "brightness(0) saturate(100%) invert(22%) sepia(88%) saturate(1800%) hue-rotate(185deg) brightness(90%) contrast(105%)"
+  "brightness(0) saturate(100%) invert(34%) sepia(28%) saturate(900%) hue-rotate(310deg) brightness(95%) contrast(95%)"
 
 // Helper function to convert text to title case (first letter of each word uppercase)
 const toTitleCase = (str: string) => {
@@ -132,18 +132,18 @@ export function Footer() {
 
       <footer className="relative z-10 mt-12 sm:mt-16 overflow-hidden">
       {/* Corner decorations — deep brown tint (hero style) */}
-      {/* <div className="absolute left-0 top-0 z-0 pointer-events-none">
-        <CloudinaryImage src="/decoration/flower-decoration-left-bottom-corner2.png" alt="" width={300} height={300} className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] scale-y-[-1]" priority={false} style={{ filter: DECO_FILTER }} />
+      <div className="absolute left-0 top-0 z-0 pointer-events-none">
+        <CloudinaryImage src="/decoration/flower-decoration-left-bottom-corner2.png" alt="" width={300} height={300} className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] scale-y-[-1]" priority={false}  />
       </div>
       <div className="absolute right-0 top-0 z-0 pointer-events-none">
-        <CloudinaryImage src="/decoration/flower-decoration-left-bottom-corner2.png" alt="" width={300} height={300} className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] scale-x-[-1] scale-y-[-1]" priority={false} style={{ filter: DECO_FILTER }} />
+        <CloudinaryImage src="/decoration/flower-decoration-left-bottom-corner2.png" alt="" width={300} height={300} className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] scale-x-[-1] scale-y-[-1]" priority={false}  />
       </div>
       <div className="absolute left-0 bottom-0 z-0 pointer-events-none">
-        <CloudinaryImage src="/decoration/flower-decoration-left-bottom-corner2.png" alt="" width={300} height={300} className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px]" priority={false} style={{ filter: DECO_FILTER }} />
+        <CloudinaryImage src="/decoration/flower-decoration-left-bottom-corner2.png" alt="" width={300} height={300} className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px]" priority={false} />
       </div>
       <div className="absolute right-0 bottom-0 z-0 pointer-events-none">
-        <CloudinaryImage src="/decoration/flower-decoration-left-bottom-corner2.png" alt="" width={300} height={300} className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] scale-x-[-1]" priority={false} style={{ filter: DECO_FILTER }} />
-      </div> */}
+        <CloudinaryImage src="/decoration/flower-decoration-left-bottom-corner2.png" alt="" width={300} height={300} className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] scale-x-[-1]" priority={false}/>
+      </div>
       
       {/* Monogram / Couple Illustration - centered at top */}
       <div className="relative z-10 flex flex-col items-center pt-6 sm:pt-8 md:pt-10 mb-5 sm:mb-6 md:mb-8">
@@ -160,7 +160,7 @@ export function Footer() {
               fill
               className="object-contain"
               priority={false}
-              // style={{ filter: DECO_FILTER }}
+              style={{ filter: DECO_FILTER }}
             />
           </div>
         </motion.div>
@@ -192,7 +192,7 @@ export function Footer() {
                  className="lighten-regular text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] leading-tight"
                  style={{ color: 'var(--color-motif-deep)' }}
                 >
-                  {brideNickname} & {groomNickname}
+                  {groomNickname} & {brideNickname}
                   </h3>
               </div>
               <div className="space-y-2.5 sm:space-y-3 md:space-y-4">
@@ -248,9 +248,9 @@ export function Footer() {
                     <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0">
                     <Clock className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 flex-shrink-0" style={{ color: palette.deep }} />
                     </div>
-                    <h4 className={`${cinzel.className} font-semibold text-base sm:text-lg md:text-xl`} style={{ color: palette.softBrown }}>Ceremony</h4>
+                    <h4 className={`${cinzel.className} font-semibold text-base sm:text-lg md:text-xl`} style={{ color: palette.deep }}>Ceremony</h4>
                   </div>
-                  <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 ${cormorant.className} text-xs sm:text-sm leading-relaxed`} style={{ color: palette.softBrown }}>
+                  <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 ${cormorant.className} text-xs sm:text-sm leading-relaxed`} style={{ color: palette.deep }}>
                     <div className="flex items-start gap-2 sm:gap-2.5 md:gap-3">
                       <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 mt-0.5 text-motif-deep" style={{ color: palette.background }} />
                       <span className="text-motif-deep">{toTitleCase(siteConfig.ceremony.location)}</span>
@@ -266,9 +266,9 @@ export function Footer() {
                     <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-motif-cream rounded-full flex items-center justify-center flex-shrink-0">
                       <Heart className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 flex-shrink-0" style={{ color: palette.deep }} fill="color-mix(in srgb, var(--color-motif-deep) 9%, transparent)" />
                     </div>
-                    <h4 className={`${cinzel.className} font-semibold text-base sm:text-lg md:text-xl`} style={{ color: palette.softBrown }}>Reception</h4>
+                    <h4 className={`${cinzel.className} font-semibold text-base sm:text-lg md:text-xl`} style={{ color: palette.deep }}>Reception</h4>
                   </div>
-                  <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 ${cormorant.className} text-xs sm:text-sm leading-relaxed`} style={{ color: palette.softBrown }}>
+                  <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 ${cormorant.className} text-xs sm:text-sm leading-relaxed`} style={{ color: palette.deep }}>
                     <div className="flex items-start gap-2 sm:gap-2.5 md:gap-3">
                       <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 mt-0.5" style={{ color: palette.deep }} />
                       <span>{toTitleCase(siteConfig.reception.location)}</span>

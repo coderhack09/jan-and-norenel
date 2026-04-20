@@ -40,20 +40,12 @@ const cinzel = Cinzel({
 })
 
 const galleryItems = [
-  { image: "/mobile-background/couple (1).webp", text: " " },
-  { image: "/mobile-background/couple (7).webp", text: " " },
+  { image: "/mobile-background/couple (3).webp", text: " " },
   { image: "/mobile-background/couple (4).webp", text: " " },
-  { image: "/mobile-background/couple (9).webp", text: " " },
-  { image: "/mobile-background/couple (11).webp", text: " " },
-  { image: "/mobile-background/couple (14).webp", text: " " },
+  { image: "/mobile-background/couple (12).webp", text: " " },
+  { image: "/mobile-background/couple (7).webp", text: " " },
   { image: "/mobile-background/couple (15).webp", text: " " },
   { image: "/mobile-background/couple (16).webp", text: " " },
-  { image: "/mobile-background/couple (18).webp", text: " " },
-  { image: "/mobile-background/couple (19).webp", text: " " },
-  { image: "/mobile-background/couple (20).webp", text: " " },
-  { image: "/mobile-background/couple (21).webp", text: " " },
-  { image: "/mobile-background/couple (22).webp", text: " " },
-  { image: "/mobile-background/couple (23).webp", text: " " },
 ]
 
 export function Gallery() {
@@ -156,25 +148,25 @@ export function Gallery() {
       {/* Corner floral decoration - aligned with Details section */}
       <div className="absolute inset-0 pointer-events-none z-[1]">
         <CloudinaryImage
-          src="/decoration/flower-decoration-left-bottom-corner2.png"
+          src="/decoration/new/left-top.png"
           alt=""
           width={300}
           height={300}
           className="absolute top-0 left-0 w-auto h-auto max-w-[120px] sm:max-w-[160px] md:max-w-[200px]"
-          style={{ transform: "scaleY(-1)", filter: GALLERY_DECO_FILTER }}
+          style={{ filter: GALLERY_DECO_FILTER }}
           priority={false}
         />
         <CloudinaryImage
-          src="/decoration/flower-decoration-left-bottom-corner2.png"
+          src="/decoration/new/right-top.png"
           alt=""
           width={300}
           height={300}
           className="absolute top-0 right-0 w-auto h-auto max-w-[120px] sm:max-w-[160px] md:max-w-[200px]"
-          style={{ transform: "scaleX(-1) scaleY(-1)", filter: GALLERY_DECO_FILTER }}
+          style={{ filter: GALLERY_DECO_FILTER }}
           priority={false}
         />
         <CloudinaryImage
-          src="/decoration/flower-decoration-left-bottom-corner2.png"
+          src="/decoration/new/left-bottom.png"
           alt=""
           width={300}
           height={300}
@@ -183,12 +175,12 @@ export function Gallery() {
           priority={false}
         />
         <CloudinaryImage
-          src="/decoration/flower-decoration-left-bottom-corner2.png"
+          src="/decoration/new/right-bottom.png"
           alt=""
           width={300}
           height={300}
           className="absolute bottom-0 right-0 w-auto h-auto max-w-[120px] sm:max-w-[160px] md:max-w-[200px]"
-          style={{ transform: "scaleX(-1)", filter: GALLERY_DECO_FILTER }}
+          style={{ filter: GALLERY_DECO_FILTER }}
           priority={false}
         />
       </div>
@@ -197,9 +189,9 @@ export function Gallery() {
       <div className="relative z-10 text-center mb-12 sm:mb-16 md:mb-20 px-4 sm:px-6">
         <p
           className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] mb-2`}
-          style={{ color: 'var(--color-motif-medium)' }}
+          style={{ color: 'var(--color-motif-deep)' }}
         >
-          Our Story in Frames
+          Our Love Story Gallery
         </p>
         <h2
           className="lighten-regular text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] leading-tight"
@@ -209,7 +201,7 @@ export function Gallery() {
         </h2>
         <p
           className={`${cormorant.className} text-xs sm:text-sm md:text-base font-light max-w-xl mx-auto leading-relaxed px-2 mb-3 sm:mb-4`}
-          style={{ color: 'var(--color-motif-medium)' }}
+          style={{ color: 'var(--color-motif-deep)' }}
         >
           From our first chapter to this beautiful season of commitment, every moment has been a testament to love, faith, and grace. We share these memories with heartfelt gratitude as we look forward to the lifetime that awaits us.
         </p>

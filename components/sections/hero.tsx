@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { CloudinaryImage } from "@/components/ui/cloudinary-image"
+import Image from "next/image"
 import { siteConfig } from "@/content/site"
 
 export function Hero() {
@@ -10,335 +10,292 @@ export function Hero() {
   useEffect(() => {
     const timers = [
       setTimeout(() => setPhase(1), 100),
-      setTimeout(() => setPhase(2), 380),
-      setTimeout(() => setPhase(3), 640),
-      setTimeout(() => setPhase(4), 860),
-      setTimeout(() => setPhase(5), 1060),
+      setTimeout(() => setPhase(2), 360),
+      setTimeout(() => setPhase(3), 600),
+      setTimeout(() => setPhase(4), 820),
+      setTimeout(() => setPhase(5), 1020),
     ]
     return () => timers.forEach(clearTimeout)
   }, [])
 
-  const vis = (minPhase: number) =>
-    phase >= minPhase
-      ? "opacity-100 translate-y-0 transition-all duration-700 ease-out"
-      : "opacity-0 translate-y-5 transition-all duration-700 ease-out"
+  const vis = (minPhase: number, delay = "0ms") => ({
+    opacity:    phase >= minPhase ? 1 : 0,
+    transform:  phase >= minPhase ? "translateY(0)" : "translateY(14px)",
+    transition: `opacity 700ms ease-out ${delay}, transform 700ms ease-out ${delay}`,
+  })
+
+  const weddingDate  = new Date(siteConfig.wedding.date)
+  const weddingYear  = weddingDate.getFullYear()
+  const weddingMonth = weddingDate.toLocaleString("en-US", { month: "long" }).toUpperCase()
+  const weddingDay   = weddingDate.getDate()
 
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* ── Background ── */}
+      <div className="absolute inset-0 bg-white" />
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: "radial-gradient(ellipse 72% 60% at 50% 46%, rgba(236,196,210,0.16) 0%, rgba(248,220,228,0.06) 60%, transparent 84%)",
+      }} />
 
-      {/* Main content */}
-      <div className="relative z-10 w-full min-h-screen flex items-center justify-center px-4 sm:px-6 pt-16">
-        {/* Card container */}
-        <div
-          className={`w-full max-w-lg sm:max-w-xl rounded-[24px] sm:rounded-[28px] px-7 sm:px-12 py-10 sm:py-14 text-center transition-all duration-700 ease-out ${
-            phase >= 1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+      {/* ── Corner florals ── */}
+      <Image src="/decoration/new/left-top.png"     alt="" width={320} height={320} priority aria-hidden
+        className="absolute top-0 left-0 pointer-events-none select-none w-28 sm:w-40 md:w-56 lg:w-64" />
+      <Image src="/decoration/new/right-top.png"    alt="" width={320} height={320} priority aria-hidden
+        className="absolute top-0 right-0 pointer-events-none select-none w-28 sm:w-40 md:w-56 lg:w-64" />
+      <Image src="/decoration/new/left-bottom.png"  alt="" width={320} height={320} aria-hidden
+        className="absolute bottom-0 left-0 pointer-events-none select-none w-28 sm:w-40 md:w-56 lg:w-64" />
+      <Image src="/decoration/new/right-bottom.png" alt="" width={320} height={320} aria-hidden
+        className="absolute bottom-0 right-0 pointer-events-none select-none w-28 sm:w-40 md:w-56 lg:w-64" />
+
+      {/* ══════════════════════════════════════
+          MAIN CARD — single centered column
+          Same max-w + padding system as LoadingScreen.
+         ══════════════════════════════════════ */}
+      <div className="relative z-10 w-full flex items-center justify-center"
+        style={{
+          paddingTop:    "clamp(5rem, 13vh, 9rem)",
+          paddingBottom: "clamp(5rem, 13vh, 9rem)",
+          paddingLeft:   "clamp(1.5rem, 6vw, 4rem)",
+          paddingRight:  "clamp(1.5rem, 6vw, 4rem)",
+        }}>
+
+        <div className="w-full flex flex-col items-center"
           style={{
-            background: "linear-gradient(155deg, #F4F6F2 0%, #EDF1EC 40%, #F0F4EF 70%, #F4F6F2 100%)",
-            border: "1px solid rgba(95, 125, 107, 0.20)",
-            boxShadow: "0 24px 80px rgba(47, 79, 62, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.70)",
-          }}
-        >
+            maxWidth: "clamp(280px, 72vw, 520px)",
+            gap:      "clamp(1.0rem, 2.6vh, 1.8rem)",
+          }}>
 
-          {/* Monogram + glow ring */}
-          <div className="flex justify-center mb-8">
-            <div className="relative flex items-center justify-center">
-              <div
-                className="absolute rounded-full animate-loader-glow"
-                style={{
-                  width: "160px",
-                  height: "160px",
-                  background:
-                    "radial-gradient(circle, rgba(95, 125, 107, 0.12) 0%, transparent 65%)",
-                }}
-              />
-              <div
-                className="absolute rounded-full"
-                style={{
-                  width: "90px",
-                  height: "90px",
-                  border: "1px solid rgba(95, 125, 107, 0.25)",
-                }}
-              />
-              <CloudinaryImage
-                src={siteConfig.couple.monogram}
-                alt={`${siteConfig.couple.brideNickname} & ${siteConfig.couple.groomNickname} monogram`}
-                width={160}
-                height={160}
-                className="relative h-20 w-20 sm:h-24 sm:w-24 object-contain object-center brightness-0"
-                style={{ opacity: 0.75 }}
-                priority
-              />
-            </div>
-          </div>
+          {/* ── SECTION 1 · Eyebrow + Title ── */}
+          <div style={{ ...vis(1), gap: "clamp(0.25rem, 0.8vh, 0.5rem)" }} className="flex flex-col items-center w-full">
 
-          {/* Together with their families */}
-          <p
-            className={`lora-regular ${vis(2)}`}
-            style={{
-              fontSize: "clamp(0.85rem, 2.2vw, 1.05rem)",
-              letterSpacing: "0.08em",
-              color: "rgba(47, 79, 62, 0.78)",
-              lineHeight: 1.6,
-            }}
-          >
-            Together with their families
-          </p>
-
-          {/* Thin rule */}
-          {/* <div className={`flex items-center gap-3 justify-center mt-3 mb-2 ${vis(2)}`}>
-            <div className="h-px flex-1" style={{ background: "linear-gradient(to left, rgba(47, 79, 62, 0.30), transparent)" }} />
-            <span style={{ color: "rgba(47, 79, 62, 0.35)", fontSize: "4px" }}>◆</span>
-            <div className="h-px flex-1" style={{ background: "linear-gradient(to right, rgba(47, 79, 62, 0.30), transparent)" }} />
-          </div> */}
-
-          {/* "to celebrate the marriage of" */}
-          <p
-            className={`lora-regular ${vis(2)}`}
-            style={{
-              fontSize: "clamp(0.80rem, 2vw, 1rem)",
-              letterSpacing: "0.06em",
-              color: "rgba(47, 79, 62, 0.68)",
-              lineHeight: 1.6,
-            }}
-          >
-            to celebrate the marriage of
-          </p>
-
-          {/* Couple names */}
-          <div className={`mt-5 ${vis(3)}`}>
-            <p
-              className="symphony-pro-regular"
-              style={{
-                fontSize: "clamp(4rem, 13.5vw, 7.5rem)",
-                color: "#2F4F3E",
-                lineHeight: 1.05,
-                textShadow: "0 2px 28px rgba(47, 79, 62, 0.18)",
-              }}
-            >
-              {siteConfig.couple.brideNickname.trim()}
+            <p className="quicksand-book tracking-[0.30em] uppercase text-center" style={{
+              fontSize: "clamp(0.50rem, 1.3vw, 0.62rem)",
+              color:    "rgba(196,124,150,0.62)",
+            }}>
+              You are cordially invited
             </p>
 
-            {/* Ampersand divider */}
-            <div className="flex items-center gap-3 justify-center my-1">
-              <div
-                className="h-px flex-1 max-w-[55px]"
-                style={{ background: "linear-gradient(to left, rgba(47, 79, 62, 0.30), transparent)" }}
-              />
-              <span
-                className="symphony-pro-regular"
-                style={{
-                  fontSize: "clamp(1.5rem, 4.5vw, 2.1rem)",
-                  color: "rgba(95, 125, 107, 0.80)",
-                  lineHeight: 1,
-                }}
-              >
-                &amp;
+            <h1 className="better-saturday text-center" style={{
+              fontSize:      "clamp(2.0rem, 5.8vw, 3.4rem)",
+              color:         "#2a2a2a",
+              lineHeight:    1.0,
+              letterSpacing: "0.01em",
+            }}>
+              Join Our Wedding
+            </h1>
+
+            {/* wavy rule */}
+            <svg viewBox="0 0 140 14" aria-hidden
+              style={{ width: "clamp(80px, 20vw, 140px)", overflow: "visible", display: "block", margin: "0.2rem auto 0" }}>
+              <path d="M0 7 Q17.5 1 35 7 Q52.5 13 70 7 Q87.5 1 105 7 Q122.5 13 140 7"
+                fill="none" stroke="rgba(196,124,150,0.40)" strokeWidth="1.4" strokeLinecap="round" />
+            </svg>
+
+            <p className="glacial-indifference text-center" style={{
+              fontSize:      "clamp(0.58rem, 1.5vw, 0.72rem)",
+              letterSpacing: "0.04em",
+              color:         "rgba(80,45,60,0.52)",
+              lineHeight:    1.7,
+              marginTop:     "0.1rem",
+              maxWidth:      "32ch",
+            }}>
+              Together with their families, to celebrate the marriage of
+            </p>
+          </div>
+
+          {/* thin divider */}
+          <div style={vis(1)} className="w-full flex items-center gap-3">
+            <div className="flex-1 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(196,124,150,0.22))" }} />
+            <span style={{ color: "rgba(196,124,150,0.30)", fontSize: "5px" }}>◆</span>
+            <div className="flex-1 h-px" style={{ background: "linear-gradient(to left, transparent, rgba(196,124,150,0.22))" }} />
+          </div>
+
+          {/* ── SECTION 2 · Couple Names ── */}
+          <div style={{ ...vis(2, "60ms"), gap: "0.4rem" }} className="flex flex-col items-center w-full">
+
+            <div className="flex flex-col items-center w-full"
+              style={{ gap: "clamp(0.1rem, 0.6vh, 0.4rem)" }}>
+
+              {/* Bride */}
+              <span className="better-saturday text-center" style={{
+                fontSize:      "clamp(3.2rem, 11.5vw, 6.2rem)",
+                color:         "#1e1e1e",
+                lineHeight:    1.0,
+                letterSpacing: "0.005em",
+              }}>
+                {siteConfig.couple.groomNickname.trim()}
               </span>
-              <div
-                className="h-px flex-1 max-w-[55px]"
-                style={{ background: "linear-gradient(to right, rgba(47, 79, 62, 0.30), transparent)" }}
-              />
+
+              {/* & — centered between names */}
+              <span className="better-saturday text-center" style={{
+                fontSize:      "clamp(2.0rem, 7vw, 4.0rem)",
+                color:         "rgba(196,124,150,0.78)",
+                lineHeight:    1.0,
+                letterSpacing: "0.04em",
+              }}>
+                and
+              </span>
+
+              {/* Groom */}
+              <span className="better-saturday text-center" style={{
+                fontSize:      "clamp(3.2rem, 11.5vw, 6.2rem)",
+                color:         "#1e1e1e",
+                lineHeight:    1.0,
+                letterSpacing: "0.005em",
+              }}>
+                {siteConfig.couple.brideNickname.trim()}
+              </span>
             </div>
 
-            <p
-              className="awesome-lathusca"
-              style={{
-                fontSize: "clamp(4rem, 13.5vw, 7.5rem)",
-                color: "#2F4F3E",
-                lineHeight: 1.05,
-                textShadow: "0 2px 28px rgba(47, 79, 62, 0.18)",
-              }}
-            >
-              {siteConfig.couple.groomNickname.trim()}
-            </p>
+            {/* wavy underline */}
+            {/* <svg viewBox="0 0 200 14" aria-hidden
+              style={{ width: "clamp(140px, 44vw, 300px)", overflow: "visible", display: "block" }}>
+              <path d="M0 7 Q25 1 50 7 Q75 13 100 7 Q125 1 150 7 Q175 13 200 7"
+                fill="none" stroke="rgba(196,124,150,0.30)" strokeWidth="1.3" strokeLinecap="round" />
+            </svg> */}
           </div>
 
-          {/* Diamond rule */}
-          {/* <div className={`flex items-center gap-3 justify-center mt-6 mb-1 ${vis(4)}`}>
-            <div
-              className="h-px flex-1"
-              style={{ background: "linear-gradient(to left, rgba(47, 79, 62, 0.30), transparent)" }}
-            />
-            <span style={{ color: "rgba(47, 79, 62, 0.45)", fontSize: "5px" }}>◆</span>
-            <div
-              className="h-px flex-1"
-              style={{ background: "linear-gradient(to right, rgba(47, 79, 62, 0.30), transparent)" }}
-            />
-          </div> */}
+          {/* thin divider */}
+          <div style={vis(2, "60ms")} className="w-full flex items-center gap-3">
+            {/* <div className="flex-1 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(196,124,150,0.20))" }} />
+            <span style={{ color: "rgba(196,124,150,0.28)", fontSize: "5px" }}>◆</span>
+            <div className="flex-1 h-px" style={{ background: "linear-gradient(to left, transparent, rgba(196,124,150,0.20))" }} /> */}
+          </div>
 
-          {/* ── Date Block ── */}
-          <div className={`mt-7 flex flex-col items-center gap-1.5 ${vis(4)}`}>
+          {/* ── SECTION 3 · Date ── */}
+          <div style={{ ...vis(3, "60ms"), gap: "clamp(0.35rem, 1vh, 0.6rem)" }} className="flex flex-col items-center w-full"
+            aria-label={`${siteConfig.ceremony.day}, ${siteConfig.wedding.date} at ${siteConfig.ceremony.time}`}>
 
-            {/* Month */}
-            <p
-              className="lora-regular"
-              style={{
-                fontSize: "clamp(0.65rem, 1.6vw, 0.78rem)",
-                letterSpacing: "0.38em",
-                textTransform: "uppercase",
-                color: "rgba(47, 79, 62, 0.60)",
-              }}
-            >
-              {siteConfig.ceremony.date.split(" ")[0]}
+            {/* MONTH */}
+            <p className="quicksand-book text-center" style={{
+              fontSize:      "clamp(0.60rem, 1.7vw, 0.82rem)",
+              letterSpacing: "0.40em",
+              textTransform: "uppercase",
+              color:         "rgba(35,35,35,0.72)",
+            }}>
+              {weddingMonth}
             </p>
 
-            {/* Row: day of week · big day number · time */}
-            <div className="flex items-center" style={{ lineHeight: 1 }}>
+            {/* FRIDAY · [30] · AT 4:00 PM */}
+            <div className="flex items-center justify-center w-full"
+              style={{ gap: "clamp(0.9rem, 3vw, 1.8rem)" }}>
 
-              {/* Day of week */}
-              <p
-                className="lora-regular"
-                style={{
-                  fontSize: "clamp(0.58rem, 1.4vw, 0.70rem)",
-                  letterSpacing: "0.22em",
-                  textTransform: "uppercase",
-                  color: "rgba(47, 79, 62, 0.55)",
-                  paddingRight: "clamp(0.7rem, 2.2vw, 1.1rem)",
-                }}
-              >
+              <span className="quicksand-book uppercase" style={{
+                fontSize:      "clamp(0.55rem, 1.5vw, 0.72rem)",
+                letterSpacing: "0.26em",
+                color:         "rgba(35,35,35,0.56)",
+              }}>
                 {siteConfig.ceremony.day}
-              </p>
+              </span>
 
-              {/* Vertical rule */}
-              <div style={{
-                width: "1px",
-                height: "clamp(2.4rem, 6.5vw, 3.4rem)",
-                background: "linear-gradient(to bottom, transparent, rgba(47, 79, 62, 0.28), transparent)",
-                flexShrink: 0,
-              }} />
-
-              {/* Day number — sage accent */}
-              <p
-                className="lora-bold"
-                style={{
-                  fontSize: "clamp(2.8rem, 9vw, 4rem)",
-                  letterSpacing: "-0.02em",
-                  color: "#2F4F3E",
-                  padding: "0 clamp(0.7rem, 2.2vw, 1.1rem)",
+              {/* date circle */}
+              <div className="flex items-center justify-center rounded-full flex-shrink-0" style={{
+                width:      "clamp(2.6rem, 7.5vw, 3.8rem)",
+                height:     "clamp(2.6rem, 7.5vw, 3.8rem)",
+                background: "linear-gradient(135deg, rgba(238,172,196,0.95) 0%, rgba(210,110,148,0.88) 100%)",
+                boxShadow:  "0 3px 16px rgba(196,124,150,0.28), 0 1px 4px rgba(196,124,150,0.18)",
+              }}>
+                <span className="quicksand-book tabular-nums" style={{
+                  fontSize:   "clamp(1.05rem, 3.2vw, 1.65rem)",
+                  color:      "#fff",
                   lineHeight: 1,
-                }}
-              >
-                {siteConfig.ceremony.date.split(" ")[1]?.replace(",", "")}
-              </p>
+                  fontWeight: 600,
+                }}>
+                  {weddingDay}
+                </span>
+              </div>
 
-              {/* Vertical rule */}
-              <div style={{
-                width: "1px",
-                height: "clamp(2.4rem, 6.5vw, 3.4rem)",
-                background: "linear-gradient(to bottom, transparent, rgba(47, 79, 62, 0.28), transparent)",
-                flexShrink: 0,
-              }} />
-
-              {/* Time */}
-              <p
-                className="lora-regular"
-                style={{
-                  fontSize: "clamp(0.58rem, 1.4vw, 0.70rem)",
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "rgba(47, 79, 62, 0.55)",
-                  paddingLeft: "clamp(0.7rem, 2.2vw, 1.1rem)",
-                }}
-              >
-                At {siteConfig.ceremony.time}
-              </p>
+              <span className="quicksand-book uppercase" style={{
+                fontSize:      "clamp(0.55rem, 1.5vw, 0.72rem)",
+                letterSpacing: "0.18em",
+                color:         "rgba(35,35,35,0.56)",
+              }}>
+                at {siteConfig.ceremony.time}
+              </span>
             </div>
 
-            {/* Year */}
-            <p
-              className="lora-regular"
-              style={{
-                fontSize: "clamp(0.65rem, 1.6vw, 0.78rem)",
-                letterSpacing: "0.38em",
-                textTransform: "uppercase",
-                color: "rgba(47, 79, 62, 0.45)",
-              }}
-            >
-              {siteConfig.ceremony.date.split(" ")[2]}
+            {/* YEAR */}
+            <p className="quicksand-book tabular-nums text-center" style={{
+              fontSize:      "clamp(0.56rem, 1.5vw, 0.72rem)",
+              letterSpacing: "0.30em",
+              color:         "rgba(35,35,35,0.50)",
+            }}>
+              {weddingYear}
             </p>
           </div>
 
-          {/* Ceremony & reception details */}
-          <div className={`mt-6 space-y-5 ${vis(5)}`}>
-            <div className="space-y-1.5">
-              <p
-                className="lora-regular"
-                style={{
-                  fontSize: "clamp(0.62rem, 1.5vw, 0.74rem)",
-                  letterSpacing: "0.30em",
-                  textTransform: "uppercase",
-                  color: "rgba(47, 79, 62, 0.55)",
-                }}
-              >
-                Ceremony
-              </p>
-              <p
-                className="lora-regular"
-                style={{
-                  fontSize: "clamp(0.82rem, 2.2vw, 1rem)",
-                  color: "rgba(47, 79, 62, 0.82)",
-                  lineHeight: 1.5,
-                }}
-              >
-                {siteConfig.ceremony.location}
-              </p>
-            </div>
+          {/* ── SECTION 4 · Venues ── */}
+          <div style={{ ...vis(4, "80ms") }} className="w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 w-full"
+              style={{ gap: "clamp(0.8rem, 2vh, 1.4rem)" }}>
 
-            <div
-              className="h-px w-16 mx-auto"
-              style={{ background: "rgba(95, 125, 107, 0.25)" }}
-            />
-
-            <div className="space-y-1.5">
-              <p
-                className="lora-regular"
-                style={{
-                  fontSize: "clamp(0.62rem, 1.5vw, 0.74rem)",
+              {/* Ceremony */}
+              <div className="flex flex-col items-center" style={{ gap: "0.3rem" }}>
+                <p className="quicksand-book uppercase text-center" style={{
+                  fontSize:      "clamp(0.50rem, 1.2vw, 0.62rem)",
                   letterSpacing: "0.30em",
-                  textTransform: "uppercase",
-                  color: "rgba(47, 79, 62, 0.55)",
-                }}
-              >
-                Reception to follow
-              </p>
-              <p
-                className="lora-regular"
-                style={{
-                  fontSize: "clamp(0.82rem, 2.2vw, 1rem)",
-                  color: "rgba(47, 79, 62, 0.82)",
-                  lineHeight: 1.5,
-                }}
-              >
-                {siteConfig.reception.location}
-              </p>
+                  color:         "rgba(196,124,150,0.70)",
+                }}>
+                  Ceremony
+                </p>
+                <div className="h-px w-8" style={{ background: "rgba(196,124,150,0.20)" }} />
+                <p className="glacial-indifference text-center" style={{
+                  fontSize:      "clamp(0.58rem, 1.5vw, 0.72rem)",
+                  letterSpacing: "0.06em",
+                  color:         "rgba(80,45,60,0.60)",
+                  lineHeight:    1.6,
+                }}>
+                  {siteConfig.ceremony.location}
+                </p>
+              </div>
+
+              {/* Reception */}
+              <div className="flex flex-col items-center" style={{ gap: "0.3rem" }}>
+                <p className="quicksand-book uppercase text-center" style={{
+                  fontSize:      "clamp(0.50rem, 1.2vw, 0.62rem)",
+                  letterSpacing: "0.30em",
+                  color:         "rgba(196,124,150,0.70)",
+                }}>
+                  Reception
+                </p>
+                <div className="h-px w-8" style={{ background: "rgba(196,124,150,0.20)" }} />
+                <p className="glacial-indifference text-center" style={{
+                  fontSize:      "clamp(0.58rem, 1.5vw, 0.72rem)",
+                  letterSpacing: "0.05em",
+                  color:         "rgba(80,45,60,0.48)",
+                  lineHeight:    1.6,
+                }}>
+                  {siteConfig.reception.location}
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* RSVP button */}
-          <div className={`mt-9 flex justify-center ${vis(5)}`}>
+          {/* ── SECTION 5 · RSVP Button ── */}
+          <div style={{ ...vis(5, "80ms"), paddingTop: "0.25rem" }} className="flex justify-center w-full">
             <a
               href="#guest-list"
-              className="inline-flex items-center justify-center px-10 py-3 rounded-sm transition-all duration-300 hover:bg-[#3d6b54] active:scale-95"
+              className="inline-flex items-center justify-center transition-all duration-300 hover:opacity-85 active:scale-95"
               style={{
-                fontFamily: '"Cinzel", serif',
-                fontSize: "0.62rem",
-                letterSpacing: "0.45em",
+                fontFamily:    '"Cinzel", serif',
+                fontSize:      "clamp(0.62rem, 1.4vw, 0.76rem)",
+                letterSpacing: "0.34em",
                 textTransform: "uppercase",
-                color: "#F4F6F2",
-                border: "1px solid rgba(47, 79, 62, 0.60)",
-                background: "#5F7D6B",
-                boxShadow: "0 8px 24px rgba(47, 79, 62, 0.25)",
+                color:         "#FFFFFF",
+                padding:       "clamp(0.7rem, 2vh, 0.95rem) clamp(2rem, 5vw, 3.5rem)",
+                border:        "1px solid rgba(139,74,98,0.40)",
+                background:    "linear-gradient(135deg, #8B4A62 0%, #B56B88 55%, #C47C96 100%)",
+                boxShadow:     "0 4px 20px rgba(139,74,98,0.20), inset 0 1px 0 rgba(255,255,255,0.10)",
               }}
             >
               RSVP
             </a>
           </div>
 
-        </div>{/* end card */}
+        </div>
       </div>
     </section>
   )

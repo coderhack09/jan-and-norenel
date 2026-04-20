@@ -1,10 +1,9 @@
 /**
- * Cloudinary sync script — bidirectional diff between public/ and Cloudinary.
+ * Cloudinary sync script — uploads local public/ files to Cloudinary.
  *
  * 1. Lists every asset under this project's Cloudinary folder.
  * 2. Compares against local public/ files.
- * 3. Deletes Cloudinary assets whose local file no longer exists.
- * 4. Uploads local files that are missing from Cloudinary.
+ * 3. Uploads local files that are missing from Cloudinary.
  *
  * Usage:
  *   pnpm sync:cloudinary
@@ -34,7 +33,7 @@ cloudinary.config({
 // Constants — must stay in sync with lib/cloudinary.ts
 // ---------------------------------------------------------------------------
 
-const PROJECT_PREFIX = "wedding-projects/jezel-and-rodel"
+const PROJECT_PREFIX = "wedding-projects/jan-and-norenel"
 const SOURCE_DIR = path.resolve(process.cwd(), "public")
 
 const IMAGE_EXTENSIONS = new Set([
@@ -150,34 +149,6 @@ async function uploadFile(
 }
 
 // ---------------------------------------------------------------------------
-// Delete
-// ---------------------------------------------------------------------------
-
-async function deleteCloudinaryAsset(
-  publicId: string,
-  resourceType: "image" | "video",
-  dryRun: boolean
-): Promise<"deleted" | "failed"> {
-  if (dryRun) {
-    console.log(`  - would delete — ${publicId}`)
-    return "deleted"
-  }
-  try {
-    const result = await cloudinary.uploader.destroy(publicId, { resource_type: resourceType })
-    if (result.result === "ok" || result.result === "not found") {
-      console.log(`  ✓ deleted   — ${publicId}`)
-      return "deleted"
-    }
-    console.warn(`  ⚠ ${result.result} — ${publicId}`)
-    return "failed"
-  } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : String(err)
-    console.error(`  ✗ failed    — ${publicId}: ${msg}`)
-    return "failed"
-  }
-}
-
-// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -216,38 +187,23 @@ async function main(): Promise<void> {
     listCloudinaryIds("video"),
   ])
 
-  const remoteAll = new Map<string, "image" | "video">([
-    ...Array.from(remoteImages).map((id) => [id, "image"] as [string, "image"]),
-    ...Array.from(remoteVideos).map((id) => [id, "video"] as [string, "video"]),
-  ])
+  const remoteAll = new Set<string>([...remoteImages, ...remoteVideos])
 
   console.log(`   Cloudinary assets : ${remoteAll.size}\n`)
 
   // ── Step 3: Diff ───────────────────────────────────────────────────────────
-  const toDelete = Array.from(remoteAll.entries()).filter(([id]) => !localById.has(id))
   const toUpload = Array.from(localById.entries()).filter(([id]) => !remoteAll.has(id))
 
-  if (toDelete.length === 0 && toUpload.length === 0) {
+  if (toUpload.length === 0) {
     console.log("✅  Already in sync — nothing to do.\n")
     process.exit(0)
   }
 
-  console.log(`   To delete : ${toDelete.length}`)
   console.log(`   To upload : ${toUpload.length}\n`)
 
   let failures = 0
 
-  // ── Step 4: Delete orphans ─────────────────────────────────────────────────
-  if (toDelete.length > 0) {
-    console.log(`${dryRun ? "[DRY RUN] " : ""}Deleting ${toDelete.length} orphaned asset(s)...\n`)
-    for (const [publicId, resourceType] of toDelete) {
-      const result = await deleteCloudinaryAsset(publicId, resourceType, dryRun)
-      if (result === "failed") failures++
-    }
-    console.log()
-  }
-
-  // ── Step 5: Upload new files ───────────────────────────────────────────────
+  // ── Step 4: Upload new files ───────────────────────────────────────────────
   if (toUpload.length > 0) {
     console.log(`${dryRun ? "[DRY RUN] " : ""}Uploading ${toUpload.length} new asset(s)...\n`)
     for (let i = 0; i < toUpload.length; i += BATCH_SIZE) {
@@ -264,10 +220,8 @@ async function main(): Promise<void> {
   console.log("─────────────────────────────────────────")
   if (dryRun) {
     console.log(`  DRY RUN — no changes were made`)
-    console.log(`  Would delete : ${toDelete.length}`)
     console.log(`  Would upload : ${toUpload.length}`)
   } else {
-    console.log(`  Deleted  : ${toDelete.length - failures}`)
     console.log(`  Uploaded : ${toUpload.length - failures}`)
     if (failures > 0) console.log(`  Failed   : ${failures}`)
   }
