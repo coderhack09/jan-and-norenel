@@ -5,19 +5,18 @@ export const siteConfig = {
     groom: "Jan Chael Joven C. Elasigue", //Ltryl B. Benitez
     groomNickname: "Jan",
     monogram:"/monogram/monogram.png" ,//Ltryl
-    backgroundMusic:"/background_music/Kay Tagal Kitang Hinintay - Spongecola (wedding version).mp3"
+    backgroundMusic:"/background_music/Thank God I Found You (Piano Karaoke).mp3"
   },
   googleAPI:{
-    messageForm: "https://docs.google.com/forms/d/e/1FAIpQLSdIdbbjMODRyh7_s2dM9grIW2chcjoZV-RzQ5Fi_Xn6Wp8lAw/formResponse", //done
-    message: "https://script.google.com/macros/s/AKfycbwQSFuChJptz3DSUzyJxFdWquvBxhVUdcTa77WeaOW3GZRG4G-N9p7UrlPrsTNdCLjp/exec",   //dpme
-    guestList: "https://script.google.com/macros/s/AKfycbyfSSTnSzgMJfwViOVRzbIqJF3KP2hlmg-LEg2gXTzYg5Q5N3dqMX2KUfdazfqp81ks/exec",  //done
-    guestRequest: "https://script.google.com/macros/s/AKfycbzKgBHpTsZwEazYUzgPnhT2KLquB2gZbunvhxOW-4jJj1dSTbU57MyG5oOf4d2mVLXD/exec",  //done
-    entourage: "https://script.google.com/macros/s/AKfycbxVG5lfkbMsTjqXaUhFF9ggrSSgpunN8Vw_QxXkpr6g5livlhqo3_PtTfMyTcdTl6g/exec",  //done
-    sponsors: "https://script.google.com/macros/s/AKfycby8IFM324mgVtp47YoBrOwPstpSUidC2QZRUvSyzst-NTswOzBRLLgGO1uqzNI1R9dt/exec",  //done
-    weddingDetails: "https://script.google.com/macros/s/AKfycbzyfzPY1ILFNSi86c3OkU1Np-WJ5RpPlO7h7bL3HojH7ehFm__q3FyAPC4kECn8r3uj/exec",  
+    messageForm: "https://docs.google.com/forms/d/e/1FAIpQLSe729kxK_OaVmNSdPcJlZWXF9NFwI6wd_u57U847c8VWMO_Ng/formResponse", //done
+    message: "https://script.google.com/macros/s/AKfycbxC2qXF4nBLiizJY6NsuIkACupC71UzI6e2XSs_rDlksO50KcWnelVgtZ7TlrXMdePU/exec",   //done
+    guestList: "https://script.google.com/macros/s/AKfycbxkuslEgWA_HPllJHjnJCpWsOm0YgaYTsoYvy1RrZS4_iYd4OOffvSDNejFmbC3y4CT/exec",  //done
+    guestRequest: "https://script.google.com/macros/s/AKfycbyCOsT_me1webePV-VA58z7gwhiwxEfb5yJUjBhmpYfUl672PhwVMgYDoxgWHaKZsnp/exec",  //done
+    entourage: "https://script.google.com/macros/s/AKfycbzyxqEah_GUMrHWqcWNbt7SyXD5fAchHNK6xBw0vqFUPvkwEUWshKrI10ZBUBsBbWpc/exec",  //done
+    sponsors: "https://script.google.com/macros/s/AKfycbyvBMSpznU27kTW8fzr5aIAwxo-xZU0dqmCkAG-_v0ekdXzZmF8tkOaKCjyMyRhsp5l/exec",  //done
+    weddingDetails: "https://script.google.com/macros/s/AKfycbxx8sqCdy_Tkl07A-2Ploww00pmjps8_MqYagBTyGB5851t-_AS1DJTc7rZ9T_JbKBk/exec",  //done
 ////google share 
-    googleShare: "https://docs.google.com/spreadsheets/d/1vZ5A4SKlFNHqU02P52OczTzgcaCBOvkop6Oxe2hZ59U/edit?usp=sharing",
-  },
+    googleShare: "https://docs.google.com/spreadsheets/d/1w6D7pajLYZz6CZ_CI5sSi5Lx1T-XdWTahWHHCRHsFvY/edit?usp=sharing",
   wedding: {
     date: "October 30, 2026",
     time: "4:00 PM",
@@ -110,7 +109,7 @@ Now, as they prepare to say yes before God and the people they love most, Cather
     secondary: "#F5F5DC",
   },
   snapShare: {
-    googleDriveLink: "https://drive.google.com/drive/folders/1cCo5WtCNhquk86sm0zR6E8FNI3VzAnEv?usp=sharing",
+    googleDriveLink: "https://drive.google.com/drive/folders/1uxyTZP5f4BuJnKDbX1IcVIm74CcV6_lh?usp=sharing",
     hashtag: ["#NorenelAndJanChael","#NorenelAndJanChaelWedding"],
     instructions: "Please scan this QR Code, create a folder with your name and upload the photos and videos you have taken during our wedding reception. We are delighted to see your snaps too!",
   },

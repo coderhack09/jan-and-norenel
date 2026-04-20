@@ -23,6 +23,7 @@ const ceremonyTime = siteConfig.ceremony.time
 const guestsTime = siteConfig.ceremony.guestsTime ?? "1:30 PM"
 const ceremonyVenue = siteConfig.ceremony.location
 const receptionVenue = siteConfig.reception.location
+const receptionTime = siteConfig.reception.time
 
 // Colors sourced from globals.css @theme inline — edit there to update everywhere
 // This section sits on a darker background, so render timeline text/icons in white.
@@ -62,7 +63,7 @@ const timelineEvents: TimelineEvent[] = [
     imageSrc: "/weddingtimeline/WeddingCeremony.png",
   },
   {
-    time: "11:30 AM",
+    time: "6:00 PM",
     title: "Photos",
     // description: "We are having an unplugged ceremony, meaning we kindly ask all guests to put away their phones and cameras. We want everyone to be fully in the moment with us. Don't worry—our professional photographer will capture all the special moments, and we'll be happy to share them with you later!",
     location: ceremonyVenue,
@@ -70,7 +71,7 @@ const timelineEvents: TimelineEvent[] = [
     imageSrc: "/weddingtimeline/PhotoSession.png",
   },
   {
-    time: "12:00 PM",
+    time: "7:00 PM",
     title: "Cocktail Hour",
     // description: "Enjoy drinks and light bites as we transition into the reception and mingle with guests.",
     location: receptionVenue,
@@ -78,7 +79,7 @@ const timelineEvents: TimelineEvent[] = [
     imageSrc: "/weddingtimeline/CockTailHour.png",
   },
   {
-    time: "1:30 PM",
+    time: receptionTime,
     title: "Program Starts",
     // description: `Celebrate the grand entrance of ${groomNickname} & ${brideNickname} and the start of the evening festivities.`,
     location: receptionVenue,
@@ -86,7 +87,7 @@ const timelineEvents: TimelineEvent[] = [
     imageSrc: "/weddingtimeline/reception welcom.png",
   },
   {
-    time: "6:00 PM",
+    time: "9:00 PM",
     title: "Dinner Service",
     // description: "Share a relaxed meal together as we continue the celebration.",
     location: receptionVenue,
@@ -94,7 +95,7 @@ const timelineEvents: TimelineEvent[] = [
     imageSrc: "/weddingtimeline/DinnerService.png",
   },
   {
-    time: "8:00 PM",
+    time: "10:00 PM",
     title: "Party",
     // description: "Let's dance the night away and celebrate this new chapter!",
     location: receptionVenue,
