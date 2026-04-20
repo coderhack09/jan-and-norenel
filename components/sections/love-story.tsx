@@ -76,13 +76,12 @@ export function LoveStory() {
         theme="light"
         layout="image-left"
         isFirst={true}
-        title="A Love Meant to Last"
+        title="Two Souls Shaped by the Past"
         imageSrc="/mobile-background/couple (3).webp"
         text={
           <>
             <p className="mb-4">
-            {siteConfig.couple.brideNickname} and {siteConfig.couple.groomNickname}’s story began in the simplest yet most meaningful way—two hearts crossing paths at just the right moment, unaware that something extraordinary was about to unfold. 
-            What started as a connection soon blossomed into a love that felt both natural and destined, growing stronger with every shared smile and conversation.
+            Two travelers and adventure seekers, both shaped by their pasts, never expected to find love again. Life had already taken them through different journeys, teaching them lessons they never thought would lead them back to love.
             </p>
            
           </>
@@ -98,7 +97,7 @@ export function LoveStory() {
         text={
           <>
             <p>
-            As time passed, their bond deepened into something unshakable. Through life’s highs and lows, they became each other’s constant—finding comfort in presence, strength in unity, and joy in the little things. Their love is built not just on romance, but on genuine friendship and unwavering support.
+            Years before, their paths briefly crossed at the beach—a simple moment that quietly faded into time, leaving no hint of what the future had in store.
             </p>
           </>
         }
@@ -114,7 +113,8 @@ export function LoveStory() {
         text={
           <>
             <p>
-            Together, they have created a journey filled with memories, laughter, and dreams for the future. Each chapter of their story reflects patience, understanding, and a love that continues to evolve. They have learned that true love is not just about finding the right person, but about choosing each other every day.
+            Life carried them in completely different directions, across oceans and time zones.
+            Jan Chael Joven, or Jan, found himself in Indianapolis, U.S.A., while Norenel, or Babi, built her life in Laguna, Philippines.
             </p>
            
           </>
@@ -129,7 +129,8 @@ export function LoveStory() {
         text={
           <>
             <p>
-            Now, {siteConfig.couple.brideNickname} and {siteConfig.couple.groomNickname} are ready to take the next step—hand in hand, heart to heart. With grateful spirits and hopeful hearts, they choose to turn their love into a lifelong commitment, embracing a future filled with shared dreams and endless possibilities.
+            Unexpectedly, through a mutual friend, their paths crossed once more. What started as simple, easy, and honest conversations quickly grew into something deeper and undeniably real.
+            They discovered how much they shared—the same energy, the same interests, the same love for adventures, sunsets, quiet moments, and the courage to love again.
             </p>
           </>
         }
@@ -145,7 +146,8 @@ export function LoveStory() {
         text={
           <>
             <p>
-            With this, they joyfully invite you to witness the beginning of their forever—a celebration of love, unity, and the promise of a beautiful life together.
+            Together, they found a connection that felt natural yet exciting—a rare kind of comfort, peace, and understanding. And the rest is history.
+            Now engaged and ready to begin a new chapter of their lives, they stand as proof that everything truly happens for a reason. When you least expect it, love finds its way back—more beautiful than you ever imagined.
             </p>
            
           </>

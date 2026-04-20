@@ -3,7 +3,7 @@ export const siteConfig = {
     bride: "Norenel T. Tolentino", //Noenyl Bryle M. Gonzaga
     brideNickname: "Norenel", //Ltryl
     groom: "Jan Chael Joven C. Elasigue", //Ltryl B. Benitez
-    groomNickname: "Jan",
+    groomNickname: "Jan Chael Joven",
     monogram:"/monogram/monogram.png" ,//Ltryl
     backgroundMusic:"/background_music/Thank God I Found You (Piano Karaoke).mp3"
   },
