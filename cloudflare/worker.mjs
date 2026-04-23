@@ -6,8 +6,9 @@
  * if those run *before* the Worker; pair with dashboard rules (see repo docs / user).
  */
 
+// Keep in sync with middleware.ts (LINK_PREVIEW_BOTS).
 const BOT_UA =
-  /facebookexternalhit|Facebot|Twitterbot|LinkedInBot|meta-externalagent|WhatsApp|Slackbot|TelegramBot|Discordbot|Google-InspectionTool|Googlebot|bingbot/i
+  /facebookexternalhit|facebot|meta-externalagent|whatsapp|twitterbot|linkedinbot|slackbot|slack-imgproxy|telegrambot|discordbot|googlebot|google-inspectiontool|googlebot-image|bingbot|msnbot|pinterestbot|pinterest|bingpreview|duckduckbot|baiduspider|yandex|yandexbot|applebot|yeti|kakaotalk|iframely|quora|embedly|skypeuripreview|aihitbot|bytespider|ia_archiver|tumblr|bitlybot|outbrain|discord/i
 
 const IS_IMAGE = /\.(png|jpe?g|gif|webp|svg|ico|avif|bmp)(\?|#|$)/i
 
@@ -23,7 +24,7 @@ export default {
     }
 
     const url = new URL(request.url)
-    const ua = request.headers.get("User-Agent") || ""
+    const ua = (request.headers.get("User-Agent") || "").toLowerCase()
     const allowBot = BOT_UA.test(ua)
     const isPublicAsset = IS_IMAGE.test(url.pathname) || url.pathname === "/favicon.ico"
 
