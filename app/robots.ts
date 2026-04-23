@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://jennifer-and-patrick.weddinginvitationrsvp.com"
+  "https://jan-chael-joven-and-norenel.weddinginvitationrsvp.com"
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -12,6 +12,10 @@ export default function robots(): MetadataRoute.Robots {
       // for the same user-agents (RFC 9309 — Allow wins on equal path specificity).
       {
         userAgent: "facebookexternalhit", // Facebook, WhatsApp, Instagram previews
+        allow: "/",
+      },
+      {
+        userAgent: "Facebot", // Facebook crawler (distinct UA from facebookexternalhit)
         allow: "/",
       },
       {

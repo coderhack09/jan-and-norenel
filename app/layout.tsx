@@ -6,7 +6,8 @@ import "./globals.css"
 import { siteConfig } from "@/content/site"
 import { ClientLayout } from "@/components/client-layout"
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://jan-chael-Joven-and-norenel.weddinginvitationrsvp.com/"
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://jan-chael-joven-and-norenel.weddinginvitationrsvp.com/"
 const canonicalUrl = siteUrl.replace(/\/$/, "")
 const desktopHero = "/Details/linkPreviewNext.png"
 const mobileHero = "/Details/linkPreviewNext.png"
@@ -115,7 +116,7 @@ export const metadata: Metadata = {
         secureUrl: eventImageUrl,
         width: 1200,
         height: 630,
-        type: "image/jpeg",
+        type: "image/png",
         alt: `${coupleNames} Wedding Invitation - ${siteConfig.wedding.date}`,
       },
     ],
