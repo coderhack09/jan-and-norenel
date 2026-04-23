@@ -188,7 +188,7 @@ export function Gallery() {
       {/* Header — wedding palette & copy */}
       <div className="relative z-10 text-center mb-12 sm:mb-16 md:mb-20 px-4 sm:px-6">
         <p
-          className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] mb-2`}
+          className={`font-[family-name:var(--font-crimson)] text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] mb-2`}
           style={{ color: 'var(--color-motif-deep)' }}
         >
           Our Love Story Gallery
@@ -200,7 +200,7 @@ export function Gallery() {
           Gallery
         </h2>
         <p
-          className={`${cormorant.className} text-xs sm:text-sm md:text-base font-light max-w-xl mx-auto leading-relaxed px-2 mb-3 sm:mb-4`}
+          className={`font-[family-name:var(--font-crimson)] text-xs sm:text-sm md:text-base font-light max-w-xl mx-auto leading-relaxed px-2 mb-3 sm:mb-4`}
           style={{ color: 'var(--color-motif-deep)' }}
         >
           From our first chapter to this beautiful season of commitment, every moment has been a testament to love, faith, and grace. We share these memories with heartfelt gratitude as we look forward to the lifetime that awaits us.

@@ -649,6 +649,36 @@ export function Details() {
             </div>
           </div>
 
+          {/* Guests Attire */}
+                    <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-br from-motif-silver/22 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+            <div className="relative bg-motif-cream backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border hover:shadow-[0_20px_48px_rgba(0,0,0,0.24)] hover:border-motif-deep/70 transition-all duration-300">
+              <h4
+                className="lighten-regular text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] leading-tight text-center mb-4 sm:mb-5 md:mb-6"
+                style={{ color: 'var(--color-motif-deep)' }}
+              >
+                Guests Attire
+              </h4>
+              <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-motif-medium/30 mb-4 sm:mb-6 md:mb-8">
+                <CloudinaryImage
+                  src="/Details/NewGuestAttire.png"
+                  alt="Flower girls attire — plain pink gown"
+                  fill
+                  className="object-contain bg-[#FFF7F6]/50 p-2 sm:p-3"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 672px"
+                />
+              </div>
+              <div className="pt-3 sm:pt-4 border-t border-motif-silver/70 px-3 sm:px-4 max-w-2xl mx-auto space-y-3 sm:space-y-4">
+                <div className="flex gap-3 items-start">
+                  {/* <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-motif-deep/30" aria-hidden="true" /> */}
+                  <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-motif-deep leading-relaxed">
+                  To complement the style of our special day, we kindly ask guests to come in semi-formal attire. Feel free to express your style in any color you love, except white, which is reserved for the bride. Your effort in dressing up with us makes the celebration even more meaningful.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
 
@@ -721,7 +751,7 @@ export function Details() {
                 Unplugged Ceremony
 
                 </h4>
-                <p className={`${cormorant.className} text-sm sm:text-base md:text-lg text-motif-deep/80 leading-relaxed`}>
+                <p className={`font-[family-name:var(--font-crimson)] text-sm sm:text-base md:text-lg text-motif-deep/80 leading-relaxed`}>
                 We’re having a mostly unplugged ceremony. Guests may take photos, but we kindly ask that it be kept minimal. Please avoid blocking or crowding our official photographers so they can capture the special moments. We’d love for everyone to stay present and share the moment with us. Don’t worry—professional photos will be shared with you after the event. Thank you for your understanding 
                 </p>
               </div>
@@ -733,7 +763,7 @@ export function Details() {
                 >
                 Arrival
                 </h4>
-                <p className={`${cormorant.className} text-sm sm:text-base md:text-lg text-motif-deep/80 leading-relaxed`}>
+                <p className={`font-[family-name:var(--font-crimson)] text-sm sm:text-base md:text-lg text-motif-deep/80 leading-relaxed`}>
                 To ensure everything runs smoothly, please arrive at least 30 minutes before the ceremony starts. The program will begin at {siteConfig.ceremony.time}, so we kindly ask everyone to arrive by {siteConfig.ceremony.guestsTime}. This will give you time to find your seat, take in the beautiful setup, and be fully present for our special moment
                 </p>
               </div>

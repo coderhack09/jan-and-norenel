@@ -223,7 +223,7 @@ export function SnapShare() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div
-            className={`${cormorant.className} inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[10px] sm:text-xs uppercase`}
+            className={`font-[family-name:var(--font-crimson)] inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[10px] sm:text-xs uppercase`}
             style={{ letterSpacing: "0.3em", borderColor: "var(--color-motif-deep)", backgroundColor: "var(--color-motif-deep)", color: "var(--color-motif-cream)" }}
           >
             Share your memories
@@ -235,7 +235,7 @@ export function SnapShare() {
             Capture & Share the Celebration
           </h2>
           <p
-            className={`${cormorant.className} text-xs sm:text-sm md:text-base text-motif-cream max-w-2xl mx-auto mt-2 sm:mt-4 leading-relaxed px-2`}
+            className={`font-[family-name:var(--font-crimson)] text-xs sm:text-sm md:text-base text-motif-cream max-w-2xl mx-auto mt-2 sm:mt-4 leading-relaxed px-2`}
           >
             Help us remember the little moments of {groomNickname} & {brideNickname}&apos;s day—every smile, embrace, and candid laugh. Your photos and clips complete our love story.
           </p>
@@ -282,7 +282,7 @@ export function SnapShare() {
                   </motion.div>
                 </div>
                 <p
-                  className={`${cormorant.className} text-motif-medium text-xs sm:text-sm text-center mt-3 sm:mt-5 px-1.5 leading-relaxed`}
+                  className={`font-[family-name:var(--font-crimson)] text-motif-medium text-xs sm:text-sm text-center mt-3 sm:mt-5 px-1.5 leading-relaxed`}
                 >
                   Share your snapshots to be featured in our keepsake gallery.
                 </p>
@@ -301,7 +301,7 @@ export function SnapShare() {
                   Share Our Wedding Website
                 </h4>
                 <p
-                  className={`${cormorant.className} text-motif-deep text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed px-1`}
+                  className={`font-[family-name:var(--font-crimson)] text-motif-deep text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed px-1`}
                 >
                   Spread the word about {groomNickname} & {brideNickname}&apos;s wedding celebration. Share this QR code with friends and family so they can join the celebration.
                 </p>
@@ -324,7 +324,7 @@ export function SnapShare() {
                   >
                     <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     <span
-                      className={`${cormorant.className} uppercase font-semibold`}
+                      className={`font-[family-name:var(--font-crimson)] uppercase font-semibold`}
                       style={{ letterSpacing: "0.15em" }}
                     >
                       Download QR
@@ -332,7 +332,7 @@ export function SnapShare() {
                   </button>
                 </div>
                 <p
-                  className={`${cormorant.className} text-motif-deep text-xs sm:text-sm mt-auto leading-relaxed`}
+                  className={`font-[family-name:var(--font-crimson)] text-motif-deep text-xs sm:text-sm mt-auto leading-relaxed`}
                 >
                   Scan with any camera app to open the full invitation and schedule.
                 </p>
@@ -414,7 +414,7 @@ export function SnapShare() {
                 Share on Social Media
               </h5>
               <p
-                className={`${cormorant.className} text-motif-deep text-xs sm:text-sm text-center mb-3 sm:mb-4 leading-relaxed`}
+                className={`font-[family-name:var(--font-crimson)] text-motif-deep text-xs sm:text-sm text-center mb-3 sm:mb-4 leading-relaxed`}
               >
                 Help spread the word about {groomNickname} & {brideNickname}&apos;s wedding celebration. Share the event across your favorite platforms.
               </p>
@@ -425,7 +425,7 @@ export function SnapShare() {
                 >
                   <Instagram className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform flex-shrink-0" />
                   <span
-                    className={`${cormorant.className} font-semibold text-xs sm:text-sm uppercase text-motif-deep`}
+                    className={`font-[family-name:var(--font-crimson)] font-semibold text-xs sm:text-sm uppercase text-motif-deep`}
                     style={{ letterSpacing: "0.18em" }}
                   >
                     Instagram
@@ -437,7 +437,7 @@ export function SnapShare() {
                 >
                   <Facebook className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform flex-shrink-0" />
                   <span
-                    className={`${cormorant.className} font-semibold text-xs sm:text-sm uppercase text-motif-deep`}
+                    className={`font-[family-name:var(--font-crimson)] font-semibold text-xs sm:text-sm uppercase text-motif-deep`}
                     style={{ letterSpacing: "0.18em" }}
                   >
                     Facebook
@@ -449,7 +449,7 @@ export function SnapShare() {
                 >
                   <Share2 className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform flex-shrink-0" />
                   <span
-                    className={`${cormorant.className} font-semibold text-xs sm:text-sm uppercase text-motif-deep`}
+                    className={`font-[family-name:var(--font-crimson)] font-semibold text-xs sm:text-sm uppercase text-motif-deep`}
                     style={{ letterSpacing: "0.18em" }}
                   >
                     TikTok
@@ -461,7 +461,7 @@ export function SnapShare() {
                 >
                   <Twitter className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform flex-shrink-0" />
                   <span
-                    className={`${cormorant.className} font-semibold text-xs sm:text-sm uppercase text-motif-deep`}
+                    className={`font-[family-name:var(--font-crimson)] font-semibold text-xs sm:text-sm uppercase text-motif-deep`}
                     style={{ letterSpacing: "0.18em" }}
                   >
                     Twitter
@@ -474,13 +474,13 @@ export function SnapShare() {
               <div>
                 <div className="bg-motif-cream/95 rounded-xl sm:rounded-[22px] p-3 sm:p-5 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.25)] text-center border border-motif-deep">
                   <div
-                    className={`${cormorant.className} inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-motif-deep/60 bg-motif-deep px-2.5 py-1 text-[10px] sm:text-xs uppercase text-motif-cream mb-2 sm:mb-3`}
+                    className={`font-[family-name:var(--font-crimson)] inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-motif-deep/60 bg-motif-deep px-2.5 py-1 text-[10px] sm:text-xs uppercase text-motif-cream mb-2 sm:mb-3`}
                     style={{ letterSpacing: "0.28em" }}
                   >
                     Upload Your Photos & Videos
                   </div>
                   <p
-                    className={`${cormorant.className} text-motif-deep text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 px-1`}
+                    className={`font-[family-name:var(--font-crimson)] text-motif-deep text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 px-1`}
                   >
                     Help us capture our special day! Scan the QR or use the actions below to drop your clips into our shared Drive.
                   </p>
@@ -490,7 +490,7 @@ export function SnapShare() {
                         <QRCodeCanvas id="drive-qr" value={driveLink} size={isMobile ? 130 : 200} includeMargin className="bg-white" fgColor={MOTIF_DEEP_HEX} />
                       </div>
                     </div>
-                    <p className={`${cormorant.className} text-motif-medium text-xs sm:text-sm`}>Scan with your camera app</p>
+                    <p className={`font-[family-name:var(--font-crimson)] text-motif-medium text-xs sm:text-sm`}>Scan with your camera app</p>
                   </div>
                   <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-3">
                     <button
@@ -503,7 +503,7 @@ export function SnapShare() {
                         <>
                           <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                           <span
-                            className={`${cormorant.className} uppercase font-semibold`}
+                            className={`font-[family-name:var(--font-crimson)] uppercase font-semibold`}
                             style={{ letterSpacing: "0.18em" }}
                           >
                             Copied!
@@ -513,7 +513,7 @@ export function SnapShare() {
                         <>
                           <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                           <span
-                            className={`${cormorant.className} uppercase font-semibold`}
+                            className={`font-[family-name:var(--font-crimson)] uppercase font-semibold`}
                             style={{ letterSpacing: "0.18em" }}
                           >
                             Copy Link
@@ -527,7 +527,7 @@ export function SnapShare() {
                     >
                       <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       <span
-                        className={`${cormorant.className} uppercase font-semibold text-motif-cream`}
+                        className={`font-[family-name:var(--font-crimson)] uppercase font-semibold text-motif-cream`}
                         style={{ letterSpacing: "0.18em" }}
                       >
                         Download QR
@@ -541,13 +541,13 @@ export function SnapShare() {
                     >
                       <Share2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       <span
-                        className={`${cormorant.className} tracking-[0.15em] sm:tracking-[0.18em] uppercase font-semibold text-motif-deep`}
+                        className={`font-[family-name:var(--font-crimson)] tracking-[0.15em] sm:tracking-[0.18em] uppercase font-semibold text-motif-deep`}
                       >
                         Open Drive
                       </span>
                     </a>
                   </div>
-                  <p className={`${cormorant.className} text-motif-deep text-xs sm:text-sm mt-2 sm:mt-3 leading-relaxed`}>or tap &quot;Open Google Drive Folder.&quot;</p>
+                  <p className={`font-[family-name:var(--font-crimson)] text-motif-deep text-xs sm:text-sm mt-2 sm:mt-3 leading-relaxed`}>or tap &quot;Open Google Drive Folder.&quot;</p>
                 </div>
               </div>
             )}
@@ -557,13 +557,13 @@ export function SnapShare() {
         <motion.div className="text-center mt-5 sm:mt-10" variants={fadeInUp}>
           <div className="bg-motif-cream/95 rounded-xl sm:rounded-[22px] p-4 sm:p-6 md:p-7 shadow-[0_25px_80px_rgba(0,0,0,0.25)] border border-motif-cream/80 max-w-3xl mx-auto backdrop-blur-xl">
             <p
-              className={`${cormorant.className} text-motif-deep text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-4 px-2`}
+              className={`font-[family-name:var(--font-crimson)] text-motif-deep text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-4 px-2`}
             >
               Thank you for helping make {groomNickname} & {brideNickname}&apos;s wedding celebration memorable. Your photos and messages create beautiful memories
               that we will treasure for a lifetime.
             </p>
             <div
-                className={`${cormorant.className} flex items-center justify-center gap-2 text-motif-deep text-xs sm:text-sm uppercase text-motif-deep`}
+                className={`font-[family-name:var(--font-crimson)] flex items-center justify-center gap-2 text-motif-deep text-xs sm:text-sm uppercase text-motif-deep`}
               style={{ letterSpacing: "0.25em" }}
             >
               <span>Thank you for sharing the joy</span>

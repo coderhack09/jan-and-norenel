@@ -153,7 +153,7 @@ export function WeddingTimeline() {
       {/* Header */}
       <div className="relative z-10 text-center mb-8 sm:mb-10 md:mb-12 px-3 sm:px-4">
         <p
-          className="text-[10px] sm:text-xs md:text-sm font-semibold text-motif-medium uppercase tracking-[0.2em] mb-1 sm:mb-1.5 mt-4 sm:mt-6 md:mt-8"
+          className="text-[10px] font-[family-name:var(--font-crimson)] sm:text-xs md:text-sm font-semibold text-motif-medium uppercase tracking-[0.2em] mb-1 sm:mb-1.5 mt-4 sm:mt-6 md:mt-8"
           style={{ color: 'var(--color-motif-cream)' }}
         >
           Wedding Day
@@ -167,7 +167,7 @@ export function WeddingTimeline() {
         </h2>
 
         <p
-          className={`${cormorant.className} text-[11px] sm:text-sm md:text-base lg:text-lg max-w-xl mx-auto leading-relaxed px-2 opacity-90 drop-shadow-sm`}
+          className={`font-[family-name:var(--font-crimson)] text-[11px] sm:text-sm md:text-base lg:text-lg max-w-xl mx-auto leading-relaxed px-2 opacity-90 drop-shadow-sm`}
           style={{ color: TIMELINE_TEXT }}
         >
           A simple overview of the key moments of our day, from arrival to farewell.
@@ -298,14 +298,14 @@ function TimelineText({
     <div className={`${textAlign} max-w-md ${align === "right" ? "ml-auto" : "mr-auto"}`}>
       <p
         className={`${cinzel.className} ${
-          mobile ? "text-[0.7rem]" : "text-[0.75rem] lg:text-sm"
+          mobile ? "text-[0.8rem]" : "text-[0.85rem] lg:text-sm"
         } tracking-[0.22em] uppercase drop-shadow-sm`}
         style={{ color: TIMELINE_TEXT }}
       >
         {event.title}
       </p>
       <p
-        className={`${cormorant.className} ${
+        className={`font-[family-name:var(--font-crimson)] ${
           mobile ? "text-[0.75rem]" : "text-sm lg:text-base"
         } mt-0.5 opacity-95 drop-shadow-sm`}
         style={{ color: TIMELINE_TEXT }}
@@ -315,7 +315,7 @@ function TimelineText({
 
       {event.description && (
         <p
-          className={`${cormorant.className} ${
+          className={`font-[family-name:var(--font-crimson)] ${
             mobile ? "text-[10px]" : "text-xs lg:text-sm"
           } mt-1.5 leading-relaxed opacity-90 drop-shadow-sm`}
           style={{ color: TIMELINE_TEXT }}
@@ -330,7 +330,7 @@ function TimelineText({
         >
           <MapPin className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 drop-shadow-sm" style={{ color: TIMELINE_TEXT }} />
           <p
-            className={`${cormorant.className} ${mobile ? "text-[10px]" : "text-xs lg:text-sm"} leading-relaxed drop-shadow-sm`}
+            className={`font-[family-name:var(--font-crimson)] ${mobile ? "text-[10px]" : "text-xs lg:text-sm"} leading-relaxed drop-shadow-sm`}
             style={{ color: TIMELINE_TEXT }}
           >
             {event.location}

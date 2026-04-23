@@ -71,8 +71,8 @@ export function Hero() {
           {/* ── SECTION 1 · Eyebrow + Title ── */}
           <div style={{ ...vis(1), gap: "clamp(0.25rem, 0.8vh, 0.5rem)" }} className="flex flex-col items-center w-full">
 
-            <p className="quicksand-book tracking-[0.30em] uppercase text-center" style={{
-              fontSize: "clamp(0.50rem, 1.3vw, 0.62rem)",
+            <p className="font-[family-name:var(--font-crimson)] tracking-[0.30em] uppercase text-center" style={{
+              fontSize: "clamp(0.70rem, 1.3vw, 0.82rem)",
               color:    "rgba(196,124,150,0.62)",
             }}>
               You are cordially invited
@@ -95,7 +95,7 @@ export function Hero() {
             </svg>
 
             <p className="glacial-indifference text-center" style={{
-              fontSize:      "clamp(0.58rem, 1.5vw, 0.72rem)",
+              fontSize:      "clamp(0.78rem, 1.5vw, 0.92rem)",
               letterSpacing: "0.04em",
               color:         "rgba(80,45,60,0.52)",
               lineHeight:    1.7,
@@ -170,11 +170,11 @@ export function Hero() {
             aria-label={`${siteConfig.ceremony.day}, ${siteConfig.wedding.date} at ${siteConfig.ceremony.time}`}>
 
             {/* MONTH */}
-            <p className="quicksand-book text-center" style={{
+            <p className="font-[family-name:var(--font-crimson)] text-center" style={{
               fontSize:      "clamp(0.60rem, 1.7vw, 0.82rem)",
               letterSpacing: "0.40em",
               textTransform: "uppercase",
-              color:         "rgba(35,35,35,0.72)",
+              color:         "rgb(35, 35, 35)",
             }}>
               {weddingMonth}
             </p>
@@ -183,10 +183,10 @@ export function Hero() {
             <div className="flex items-center justify-center w-full"
               style={{ gap: "clamp(0.9rem, 3vw, 1.8rem)" }}>
 
-              <span className="quicksand-book uppercase" style={{
+              <span className="font-[family-name:var(--font-crimson)] uppercase" style={{
                 fontSize:      "clamp(0.55rem, 1.5vw, 0.72rem)",
                 letterSpacing: "0.26em",
-                color:         "rgba(35,35,35,0.56)",
+                color:         "rgb(35, 35, 35)",
               }}>
                 {siteConfig.ceremony.day}
               </span>
@@ -198,7 +198,7 @@ export function Hero() {
                 background: "linear-gradient(135deg, rgba(238,172,196,0.95) 0%, rgba(210,110,148,0.88) 100%)",
                 boxShadow:  "0 3px 16px rgba(196,124,150,0.28), 0 1px 4px rgba(196,124,150,0.18)",
               }}>
-                <span className="quicksand-book tabular-nums" style={{
+                <span className="font-[family-name:var(--font-crimson)] tabular-nums" style={{
                   fontSize:   "clamp(1.05rem, 3.2vw, 1.65rem)",
                   color:      "#fff",
                   lineHeight: 1,
@@ -208,20 +208,20 @@ export function Hero() {
                 </span>
               </div>
 
-              <span className="quicksand-book uppercase" style={{
+              <span className="font-[family-name:var(--font-crimson)] uppercase" style={{
                 fontSize:      "clamp(0.55rem, 1.5vw, 0.72rem)",
                 letterSpacing: "0.18em",
-                color:         "rgba(35,35,35,0.56)",
+                color:         "rgb(35, 35, 35)",
               }}>
                 at {siteConfig.ceremony.time}
               </span>
             </div>
 
             {/* YEAR */}
-            <p className="quicksand-book tabular-nums text-center" style={{
+            <p className="font-[family-name:var(--font-crimson)] tabular-nums text-center" style={{
               fontSize:      "clamp(0.56rem, 1.5vw, 0.72rem)",
               letterSpacing: "0.30em",
-              color:         "rgba(35,35,35,0.50)",
+              color:         "rgb(35, 35, 35)",
             }}>
               {weddingYear}
             </p>
@@ -234,18 +234,18 @@ export function Hero() {
 
               {/* Ceremony */}
               <div className="flex flex-col items-center" style={{ gap: "0.3rem" }}>
-                <p className="quicksand-book uppercase text-center" style={{
-                  fontSize:      "clamp(0.50rem, 1.2vw, 0.62rem)",
+                <p className="font-[family-name:var(--font-crimson)] uppercase text-center" style={{
+                  fontSize:      "clamp(0.70rem, 1.2vw, 0.82rem)",
                   letterSpacing: "0.30em",
-                  color:         "rgba(196,124,150,0.70)",
+                  color:         "rgb(196, 124, 150)",
                 }}>
                   Ceremony
                 </p>
                 <div className="h-px w-8" style={{ background: "rgba(196,124,150,0.20)" }} />
                 <p className="glacial-indifference text-center" style={{
-                  fontSize:      "clamp(0.58rem, 1.5vw, 0.72rem)",
+                  fontSize:      "clamp(0.78rem, 1.5vw, 0.92rem)",
                   letterSpacing: "0.06em",
-                  color:         "rgba(80,45,60,0.60)",
+                  color:         "rgb(80, 45, 60)",
                   lineHeight:    1.6,
                 }}>
                   {siteConfig.ceremony.location}
@@ -254,18 +254,18 @@ export function Hero() {
 
               {/* Reception */}
               <div className="flex flex-col items-center" style={{ gap: "0.3rem" }}>
-                <p className="quicksand-book uppercase text-center" style={{
-                  fontSize:      "clamp(0.50rem, 1.2vw, 0.62rem)",
+                <p className="font-[family-name:var(--font-crimson)] uppercase text-center" style={{
+                  fontSize:      "clamp(0.70rem, 1.2vw, 0.82rem)",
                   letterSpacing: "0.30em",
-                  color:         "rgba(196,124,150,0.70)",
+                  color:         "rgb(196, 124, 150)",
                 }}>
                   Reception
                 </p>
                 <div className="h-px w-8" style={{ background: "rgba(196,124,150,0.20)" }} />
                 <p className="glacial-indifference text-center" style={{
-                  fontSize:      "clamp(0.58rem, 1.5vw, 0.72rem)",
+                  fontSize:      "clamp(0.78rem, 1.5vw, 0.92rem)",
                   letterSpacing: "0.05em",
-                  color:         "rgba(80,45,60,0.48)",
+                  color:         "rgb(80, 45, 60)",
                   lineHeight:    1.6,
                 }}>
                   {siteConfig.reception.location}

@@ -262,8 +262,8 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           <div style={{ ...vis(1), gap: "clamp(0.25rem, 0.8vh, 0.5rem)" }} className="flex flex-col items-center w-full">
 
             <p className="quicksand-book tracking-[0.30em] uppercase text-center" style={{
-              fontSize: "clamp(0.50rem, 1.3vw, 0.62rem)",
-              color:    "rgba(196,124,150,0.62)",
+              fontSize: "clamp(0.70rem, 1.3vw, 0.82rem)",
+              color:    "rgb(196, 124, 150)",
             }}>
               You are cordially invited
             </p>
@@ -285,9 +285,9 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
             </svg>
 
             <p className="glacial-indifference text-center" style={{
-              fontSize:      "clamp(0.58rem, 1.5vw, 0.72rem)",
+              fontSize:      "clamp(0.78rem, 1.5vw, 0.92rem)",
               letterSpacing: "0.04em",
-              color:         "rgba(80,45,60,0.52)",
+              color:         "rgb(80, 45, 60)",
               lineHeight:    1.7,
               marginTop:     "0.1rem",
               maxWidth:      "30ch",
@@ -373,7 +373,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
             <div className="flex items-center justify-center w-full"
               style={{ gap: "clamp(0.9rem, 3vw, 1.8rem)" }}>
 
-              <span className="quicksand-book uppercase" style={{
+              <span className="font-[family-name:var(--font-crimson)] uppercase" style={{
                 fontSize:      "clamp(0.55rem, 1.5vw, 0.72rem)",
                 letterSpacing: "0.26em",
                 color:         "rgba(35,35,35,0.56)",
@@ -388,7 +388,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                 background: "linear-gradient(135deg, rgba(238,172,196,0.95) 0%, rgba(210,110,148,0.88) 100%)",
                 boxShadow:  "0 3px 16px rgba(196,124,150,0.28), 0 1px 4px rgba(196,124,150,0.18)",
               }}>
-                <span className="quicksand-book tabular-nums" style={{
+                <span className="font-[family-name:var(--font-crimson)] tabular-nums" style={{
                   fontSize:   "clamp(1.05rem, 3.2vw, 1.65rem)",
                   color:      "#fff",
                   lineHeight: 1,
@@ -398,7 +398,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                 </span>
               </div>
 
-              <span className="quicksand-book uppercase" style={{
+              <span className="font-[family-name:var(--font-crimson)] uppercase" style={{
                 fontSize:      "clamp(0.55rem, 1.5vw, 0.72rem)",
                 letterSpacing: "0.18em",
                 color:         "rgba(35,35,35,0.56)",
@@ -420,17 +420,17 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           {/* ── SECTION 4 · Venues ── */}
           <div style={{ ...vis(3, "120ms"), gap: "0.18rem" }} className="flex flex-col items-center w-full">
             <p className="glacial-indifference text-center" style={{
-              fontSize:      "clamp(0.58rem, 1.5vw, 0.72rem)",
+              fontSize:      "clamp(0.78rem, 1.5vw, 0.92rem)",
               letterSpacing: "0.06em",
-              color:         "rgba(80,45,60,0.54)",
+              color:         "rgb(80, 45, 60)",
               lineHeight:    1.6,
             }}>
               {siteConfig.ceremony.location}
             </p>
             <p className="glacial-indifference text-center" style={{
-              fontSize:      "clamp(0.55rem, 1.4vw, 0.68rem)",
+              fontSize:      "clamp(0.75rem, 1.4vw, 0.88rem)",
               letterSpacing: "0.05em",
-              color:         "rgba(80,45,60,0.40)",
+              color:         "rgb(80, 45, 60)",
               lineHeight:    1.6,
             }}>
               {siteConfig.reception.location}
@@ -441,7 +441,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           <div style={{ ...vis(4, "80ms"), gap: "0.5rem", paddingTop: "0.25rem" }} className="flex flex-col items-center w-full">
 
             <p className="glacial-indifference text-center" style={{
-              fontSize:      "clamp(0.50rem, 1.3vw, 0.60rem)",
+              fontSize:      "clamp(0.70rem, 1.3vw, 0.80rem)",
               letterSpacing: "0.28em",
               textTransform: "uppercase",
               color:         "rgba(196,124,150,0.58)",

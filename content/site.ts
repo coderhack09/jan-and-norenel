@@ -5,7 +5,7 @@ export const siteConfig = {
     groom: "Jan Chael Joven C. Elasigue", //Ltryl B. Benitez
     groomNickname: "Jan Chael",
     monogram:"/monogram/monogram.png" ,//Ltryl
-    backgroundMusic:"/background_music/Thank God I Found You (Piano Karaoke).mp3"
+    backgroundMusic:"/background_music/I Just Fall In Love Again (MALE KEY) Piano Karaoke by Aldrich Andaya.mp3"
   },
   googleAPI:{
     messageForm: "https://docs.google.com/forms/d/e/1FAIpQLSe729kxK_OaVmNSdPcJlZWXF9NFwI6wd_u57U847c8VWMO_Ng/formResponse", //done

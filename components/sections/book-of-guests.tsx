@@ -235,7 +235,7 @@ export function BookOfGuests() {
       {/* Section Header */}
       <div className="relative z-10 text-center mb-3 sm:mb-4 md:mb-6 px-2 sm:px-3 md:px-4">
         <p
-          className={`${cormorant.className} text-[0.6rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.25em] mb-1 sm:mb-1.5 mt-4 sm:mt-6 md:mt-8`}
+          className={`font-[family-name:var(--font-crimson)] text-[0.6rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.25em] mb-1 sm:mb-1.5 mt-4 sm:mt-6 md:mt-8`}
           style={{ color: BOOK_DARK }}
         >
           Our Cherished Guests
@@ -247,7 +247,7 @@ export function BookOfGuests() {
           Book of Guests
         </h2>
         <p
-          className={`${cormorant.className} text-[10px] sm:text-xs md:text-sm font-light max-w-lg mx-auto leading-relaxed px-2`}
+          className={`font-[family-name:var(--font-crimson)] text-[10px] sm:text-xs md:text-sm font-light max-w-lg mx-auto leading-relaxed px-2`}
           style={{ color: BOOK_DARKER }}
         >
           Meet the cherished souls joining us in celebration — your presence makes our day truly special
@@ -292,16 +292,16 @@ export function BookOfGuests() {
                   {showIncrease && (
                     <TrendingUp className="h-3.5 w-3.5 sm:h-5 sm:w-5 animate-bounce" style={{ color: BOOK_ACCENT }} />
                   )}
-                  <p className={`${cormorant.className} text-sm sm:text-lg md:text-xl font-medium leading-tight`} style={{ color: BOOK_DARK }}>
+                  <p className={`font-[family-name:var(--font-crimson)] text-sm sm:text-lg md:text-xl font-medium leading-tight`} style={{ color: BOOK_DARK }}>
                     {totalGuests === 1 ? "Guest" : "Guests"} Celebrating With Us
                   </p>
                 </div>
               </div>
 
-              <p className={`${cormorant.className} text-xs sm:text-base mb-2 sm:mb-3`} style={{ color: BOOK_DARKER, opacity: 0.9 }}>
+              <p className={`font-[family-name:var(--font-crimson)] text-xs sm:text-base mb-2 sm:mb-3`} style={{ color: BOOK_DARKER, opacity: 0.9 }}>
                 {rsvpCount} {rsvpCount === 1 ? "RSVP entry" : "RSVP entries"}
               </p>
-              <p className={`${cormorant.className} text-[10px] sm:text-xs md:text-sm leading-tight`} style={{ color: BOOK_DARKER, opacity: 0.85 }}>
+              <p className={`font-[family-name:var(--font-crimson)] text-[10px] sm:text-xs md:text-sm leading-tight`} style={{ color: BOOK_DARKER, opacity: 0.85 }}>
                 Thank you for confirming your RSVP! Your presence means the world to us.
               </p>
             </div>
@@ -364,7 +364,7 @@ export function BookOfGuests() {
                           {guest.name}
                         </h3>
                         {guest.role && (
-                          <p className={`${cormorant.className} text-[9px] sm:text-[10px] md:text-xs font-medium opacity-80`} style={{ color: BOOK_DARK }}>
+                          <p className={`font-[family-name:var(--font-crimson)] text-[9px] sm:text-[10px] md:text-xs font-medium opacity-80`} style={{ color: BOOK_DARK }}>
                             {guest.role}
                           </p>
                         )}
@@ -383,7 +383,7 @@ export function BookOfGuests() {
                           style={{ backgroundColor: 'color-mix(in srgb, var(--color-motif-deep) 7%, transparent)', borderColor: 'color-mix(in srgb, var(--color-motif-deep) 21%, transparent)' }}
                         >
                           <Users className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 flex-shrink-0" style={{ color: BOOK_ACCENT }} />
-                          <span className={`${cormorant.className} text-[9px] sm:text-[10px] md:text-xs font-semibold`} style={{ color: BOOK_DARK }}>
+                          <span className={`font-[family-name:var(--font-crimson)] text-[9px] sm:text-[10px] md:text-xs font-semibold`} style={{ color: BOOK_DARK }}>
                             {guest.allowedGuests} {guest.allowedGuests === 1 ? "Guest" : "Guests"}
                           </span>
                         </div>
@@ -392,7 +392,7 @@ export function BookOfGuests() {
                           style={{ backgroundColor: 'color-mix(in srgb, var(--color-motif-deep) 7%, transparent)', borderColor: 'color-mix(in srgb, var(--color-motif-deep) 25%, transparent)' }}
                         >
                           <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 flex-shrink-0" style={{ color: BOOK_ACCENT }} />
-                          <span className={`${cormorant.className} text-[9px] sm:text-[10px] md:text-xs font-semibold`} style={{ color: BOOK_DARK }}>
+                          <span className={`font-[family-name:var(--font-crimson)] text-[9px] sm:text-[10px] md:text-xs font-semibold`} style={{ color: BOOK_DARK }}>
                             {guest.tableNumber && guest.tableNumber.trim() !== "" ? (
                               <>Table {guest.tableNumber}</>
                             ) : (
@@ -432,7 +432,7 @@ export function BookOfGuests() {
                         <div className="pt-1.5 sm:pt-2 md:pt-2.5 border-t" style={{ borderColor: 'color-mix(in srgb, var(--color-motif-deep) 15%, transparent)' }}>
                           <div className="flex items-center gap-1 mb-1 sm:mb-1.5">
                             <Users className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5" style={{ color: BOOK_ACCENT }} />
-                            <span className={`${cormorant.className} text-[9px] sm:text-[10px] md:text-xs font-semibold`} style={{ color: BOOK_DARK }}>Companions</span>
+                            <span className={`font-[family-name:var(--font-crimson)] text-[9px] sm:text-[10px] md:text-xs font-semibold`} style={{ color: BOOK_DARK }}>Companions</span>
                           </div>
                           <div className="flex flex-wrap gap-1 sm:gap-1.5">
                             {guest.companions.map((companion, idx) => (
@@ -441,9 +441,9 @@ export function BookOfGuests() {
                                 className="inline-flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1 rounded-lg border transition-colors hover:border-opacity-60"
                                 style={{ backgroundColor: 'color-mix(in srgb, var(--color-motif-cream) 80%, white)', borderColor: 'color-mix(in srgb, var(--color-motif-deep) 19%, transparent)' }}
                               >
-                                <span className={`${cormorant.className} text-[9px] sm:text-[10px] md:text-xs font-medium whitespace-nowrap`} style={{ color: BOOK_DARK }}>{companion.name}</span>
+                                <span className={`font-[family-name:var(--font-crimson)] text-[9px] sm:text-[10px] md:text-xs font-medium whitespace-nowrap`} style={{ color: BOOK_DARK }}>{companion.name}</span>
                                 {companion.relationship && companion.relationship.trim() !== "" && (
-                                  <span className={`${cormorant.className} text-[8px] sm:text-[9px] md:text-[10px] font-medium px-1.5 sm:px-2 py-0.5 rounded-full border whitespace-nowrap`} style={{ color: BOOK_DARK, backgroundColor: 'color-mix(in srgb, var(--color-motif-deep) 8%, transparent)', borderColor: 'color-mix(in srgb, var(--color-motif-deep) 15%, transparent)' }}>
+                                  <span className={`font-[family-name:var(--font-crimson)] text-[8px] sm:text-[9px] md:text-[10px] font-medium px-1.5 sm:px-2 py-0.5 rounded-full border whitespace-nowrap`} style={{ color: BOOK_DARK, backgroundColor: 'color-mix(in srgb, var(--color-motif-deep) 8%, transparent)', borderColor: 'color-mix(in srgb, var(--color-motif-deep) 15%, transparent)' }}>
                                     {companion.relationship}
                                   </span>
                                 )}
@@ -455,7 +455,7 @@ export function BookOfGuests() {
 
                       <div className="flex items-center gap-1 pt-1.5 sm:pt-2 md:pt-2.5 mt-1.5 sm:mt-2 md:mt-2.5 border-t" style={{ borderColor: 'color-mix(in srgb, var(--color-motif-deep) 13%, transparent)' }}>
                         <Calendar className="h-2.5 w-2.5 sm:h-3 sm:w-3 opacity-70" style={{ color: BOOK_ACCENT }} />
-                        <span className={`${cormorant.className} text-[8px] sm:text-[9px] md:text-[10px] opacity-80`} style={{ color: BOOK_DARKER }}>
+                        <span className={`font-[family-name:var(--font-crimson)] text-[8px] sm:text-[9px] md:text-[10px] opacity-80`} style={{ color: BOOK_DARKER }}>
                           Confirmed {formatDate(guest.updatedAt)}
                         </span>
                       </div>

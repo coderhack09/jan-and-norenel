@@ -173,7 +173,7 @@ export function Footer() {
           <p className={`${cormorant.className} text-sm sm:text-base md:text-lg mt-1 sm:mt-2`} style={{ color: palette.deep }}>
             {ceremonyDate}
           </p> */}
-          <p className={`${cormorant.className} text-xs sm:text-sm md:text-base`} style={{ color: palette.deep }}>
+          <p className={`font-[family-name:var(--font-crimson)] text-xs sm:text-sm md:text-base`} style={{ color: palette.deep }}>
             { siteConfig.ceremony.location || siteConfig.reception.location}
           </p>
         </div>
@@ -196,11 +196,11 @@ export function Footer() {
                   </h3>
               </div>
               <div className="space-y-2.5 sm:space-y-3 md:space-y-4">
-                <div className={`flex items-center gap-2 sm:gap-2.5 md:gap-3 ${cormorant.className}`} style={{ color: palette.softBrown }}>
+                <div className={`flex items-center gap-2 sm:gap-2.5 md:gap-3 font-[family-name:var(--font-crimson)]`} style={{ color: palette.softBrown }}>
                   <Calendar className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 flex-shrink-0" style={{ color: palette.deep }} />
                   <span className="text-sm sm:text-base md:text-lg font-medium text-motif-deep">{ceremonyDate}</span>
                 </div>
-                <div className={`flex items-center gap-2 sm:gap-2.5 md:gap-3 ${cormorant.className}`} style={{ color: palette.softBrown }}>
+                <div className={`flex items-center gap-2 sm:gap-2.5 md:gap-3 font-[family-name:var(--font-crimson)]`} style={{ color: palette.softBrown }}>
                   <MapPin className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 flex-shrink-0" style={{ color: palette.deep }} />
                   <span className="text-xs sm:text-sm md:text-base leading-relaxed text-motif-deep">{toTitleCase(ceremonyVenue)}</span>
                 </div>
@@ -208,7 +208,7 @@ export function Footer() {
             </div>
 
             <motion.div className="backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg" style={{ backgroundColor: 'color-mix(in srgb, var(--color-motif-cream) 93%, transparent)', boxShadow: '0 18px 45px color-mix(in srgb, var(--color-motif-deep) 7%, transparent)' }} whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
-              <blockquote className={`${cormorant.className} italic text-sm sm:text-base md:text-lg leading-relaxed min-h-[60px] sm:min-h-[70px] md:min-h-[80px]`} style={{ color: palette.deep }}>
+              <blockquote className={`font-[family-name:var(--font-crimson)] italic text-sm sm:text-base md:text-lg leading-relaxed min-h-[60px] sm:min-h-[70px] md:min-h-[80px]`} style={{ color: palette.deep }}>
                 &quot;{displayedText}
                 <span className="inline-block w-0.5 h-4 sm:h-5 md:h-6 ml-1 animate-pulse" style={{ backgroundColor: palette.champagneGold }}>|</span>&quot;
               </blockquote>
@@ -230,7 +230,7 @@ export function Footer() {
                   </div>
                   <h4 className={`${cinzel.className} font-semibold text-base sm:text-lg md:text-xl`} style={{ color: palette.deep }}>Ceremony & Reception</h4>
                 </div>
-                <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 ${cormorant.className} text-xs sm:text-sm leading-relaxed`} style={{ color: palette.softBrown }}>
+                <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 font-[family-name:var(--font-crimson)] text-xs sm:text-sm leading-relaxed`} style={{ color: palette.softBrown }}>
                   <div className="flex items-start gap-2 sm:gap-2.5 md:gap-3">
                     <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 mt-0.5" style={{ color: palette.deep }} />
                     <span className="text-motif-deep">{toTitleCase(siteConfig.ceremony.location || siteConfig.reception.location)}</span>
@@ -250,7 +250,7 @@ export function Footer() {
                     </div>
                     <h4 className={`${cinzel.className} font-semibold text-base sm:text-lg md:text-xl`} style={{ color: palette.deep }}>Ceremony</h4>
                   </div>
-                  <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 ${cormorant.className} text-xs sm:text-sm leading-relaxed`} style={{ color: palette.deep }}>
+                  <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 font-[family-name:var(--font-crimson)] text-xs sm:text-sm leading-relaxed`} style={{ color: palette.deep }}>
                     <div className="flex items-start gap-2 sm:gap-2.5 md:gap-3">
                       <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 mt-0.5 text-motif-deep" style={{ color: palette.background }} />
                       <span className="text-motif-deep">{toTitleCase(siteConfig.ceremony.location)}</span>
@@ -268,7 +268,7 @@ export function Footer() {
                     </div>
                     <h4 className={`${cinzel.className} font-semibold text-base sm:text-lg md:text-xl`} style={{ color: palette.deep }}>Reception</h4>
                   </div>
-                  <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 ${cormorant.className} text-xs sm:text-sm leading-relaxed`} style={{ color: palette.deep }}>
+                  <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 font-[family-name:var(--font-crimson)] text-xs sm:text-sm leading-relaxed`} style={{ color: palette.deep }}>
                     <div className="flex items-start gap-2 sm:gap-2.5 md:gap-3">
                       <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 mt-0.5" style={{ color: palette.deep }} />
                       <span>{toTitleCase(siteConfig.reception.location)}</span>
@@ -289,7 +289,7 @@ export function Footer() {
                 </div>
                 <h4 className={`${cinzel.className} font-semibold text-base sm:text-lg md:text-xl`} style={{ color: palette.deep }}>RSVP Deadline</h4>
               </div>
-              <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 ${cormorant.className} text-xs sm:text-sm leading-relaxed`} style={{ color: palette.softBrown }}>
+              <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 font-[family-name:var(--font-crimson)] text-xs sm:text-sm leading-relaxed`} style={{ color: palette.softBrown }}>
                 <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
                   <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" style={{ color: palette.deep }} />
                   <span className="text-motif-deep">{siteConfig.details.rsvp.deadline}</span>
@@ -327,7 +327,7 @@ export function Footer() {
               <h5 className={`${cinzel.className} font-semibold text-sm sm:text-base md:text-lg mb-2.5 sm:mb-3 md:mb-4`} style={{ color: palette.deep }}>Quick Links</h5>
               <div className="space-y-1.5 sm:space-y-2">
                 {nav.map((item) => (
-                  <a key={item.href} href={item.href} className={`block transition-colors duration-200 ${cormorant.className} text-xs sm:text-sm leading-relaxed hover:opacity-80`} style={{ color: palette.deep }}>
+                  <a key={item.href} href={item.href} className={`block transition-colors duration-200 font-[family-name:var(--font-crimson)] text-xs sm:text-sm leading-relaxed hover:opacity-80`} style={{ color: palette.deep }}>
                     {item.label}
                   </a>
                 ))}
@@ -340,21 +340,21 @@ export function Footer() {
         <motion.div className="pt-5 sm:pt-6 md:pt-7" variants={fadeInUp}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 md:gap-5">
             <div className="text-center md:text-left">
-                <p className={`${cormorant.className} text-xs sm:text-sm leading-relaxed`} style={{ color: palette.deep }}>
+                <p className={`font-[family-name:var(--font-crimson)] text-xs sm:text-sm leading-relaxed`} style={{ color: palette.deep }}>
                 © {year} {groomNickname} & {brideNickname} — crafted with love, prayers, and gratitude.
-              </p>
-              <p className={`${cormorant.className} text-xs sm:text-sm mt-1 leading-relaxed opacity-90`} style={{ color: palette.deep }}>
+                  </p>
+                  <p className={`font-[family-name:var(--font-crimson)] text-xs sm:text-sm mt-1 leading-relaxed opacity-90`} style={{ color: palette.deep }}>
                 This celebration site was designed to share our story and joy with you.
               </p>
             </div>
             <div className="text-center md:text-right space-y-1">
-                  <p className={`${cormorant.className} text-xs sm:text-sm opacity-90`} style={{ color: palette.deep }}>
+                  <p className={`font-[family-name:var(--font-crimson)] text-xs sm:text-sm opacity-90`} style={{ color: palette.deep }}>
                 Developed by{" "}
                 <a href="https://lance28-beep.github.io/portfolio-website/" target="_blank" rel="noopener noreferrer" className="underline transition-colors duration-200 hover:opacity-80" style={{ color: palette.deep }}>
                   Lance Valle
                 </a>
               </p>
-              <p className={`${cormorant.className} text-xs sm:text-sm opacity-90`} style={{ color: palette.deep }}>
+              <p className={`font-[family-name:var(--font-crimson)] text-xs sm:text-sm opacity-90`} style={{ color: palette.deep }}>
                 Want a website like this? Visit{" "}
                 <a href="https://www.facebook.com/WeddingInvitationNaga" target="_blank" rel="noopener noreferrer" className="underline transition-colors duration-200 hover:opacity-80" style={{ color: palette.deep }}>
                   Wedding Invitation Naga

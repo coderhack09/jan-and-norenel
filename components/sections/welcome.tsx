@@ -85,7 +85,7 @@ export function Welcome() {
           {/* Main heading */}
           <div className="space-y-1 sm:space-y-1.5 md:space-y-2.5">
             <p
-              className={`${cormorant.className} text-[0.65rem] sm:text-[0.7rem] md:text-xs lg:text-sm uppercase tracking-[0.24em] sm:tracking-[0.28em]`}
+              className={`font-[family-name:var(--font-crimson)] text-[0.65rem] sm:text-[0.7rem] md:text-xs lg:text-sm uppercase tracking-[0.24em] sm:tracking-[0.28em]`}
               style={{ color: 'var(--color-motif-deep)' }}
             >
               {brideName} &amp; {groomName}
@@ -101,12 +101,12 @@ export function Welcome() {
             {/* Verse */}
             <div className="space-y-0.5 sm:space-y-1">
               <p
-                className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm lg:text-base italic leading-relaxed`}
+                className={`font-[family-name:var(--font-crimson)] text-[0.7rem] sm:text-xs md:text-sm lg:text-base italic leading-relaxed`}
                 style={{ color: 'var(--color-motif-deep)', opacity: 0.9 }}
               >
                 &quot;I have found the one whom my soul loves.&quot;
               </p>
-              <p className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm lg:text-base italic leading-relaxed`} style={{ color: 'var(--color-motif-deep)', opacity: 0.9 }}>Song of Solomon 3:4</p>
+              <p className={`font-[family-name:var(--font-crimson)] text-[0.7rem] sm:text-xs md:text-sm lg:text-base italic leading-relaxed`} style={{ color: 'var(--color-motif-deep)', opacity: 0.9 }}>Song of Solomon 3:4</p>
 
             </div>
 
@@ -120,7 +120,7 @@ export function Welcome() {
 
           {/* Body text */}
           <div
-            className={`${cormorant.className} text-[0.75rem] sm:text-[0.85rem] md:text-sm lg:text-base leading-relaxed sm:leading-6 md:leading-7 space-y-2.5 sm:space-y-3 md:space-y-4`}
+            className={`font-[family-name:var(--font-crimson)] text-[0.75rem] sm:text-[0.85rem] md:text-sm lg:text-base leading-relaxed sm:leading-6 md:leading-7 space-y-2.5 sm:space-y-3 md:space-y-4`}
             style={{ color: 'var(--color-motif-deep)' }}
           >
             <p>

@@ -174,7 +174,7 @@ export function FAQ() {
 
       {/* Section Header */}
       <div className="relative z-30 text-center mb-6 sm:mb-9 md:mb-12 px-3 sm:px-4">
-        <p className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] mb-2`} style={{ color: palette.deep }}>
+        <p className={`font-[family-name:var(--font-crimson)] text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] mb-2`} style={{ color: palette.deep }}>
           Answers for our celebration day
         </p>
         <h2 
@@ -183,7 +183,7 @@ export function FAQ() {
                 >
           Frequently Asked Questions
         </h2>
-        <p className="text-xs sm:text-sm md:text-base font-light max-w-xl mx-auto leading-relaxed px-2 mb-2 sm:mb-3" style={{ color: 'var(--color-motif-deep)' }}>
+        <p className="font-[family-name:var(--font-crimson)] text-xs sm:text-sm md:text-base font-light max-w-xl mx-auto leading-relaxed px-2 mb-2 sm:mb-3" style={{ color: 'var(--color-motif-deep)' }}>
           Helpful notes so you can simply arrive, celebrate, and enjoy this new chapter with us.
         </p>
         <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">

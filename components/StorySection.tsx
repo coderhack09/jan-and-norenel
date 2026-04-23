@@ -127,7 +127,7 @@ export const StorySection: React.FC<StorySectionProps> = ({
               </h2>
             )}
             
-            <div className={`${cormorant.className} text-[11px] leading-[1.3] sm:text-sm md:text-2xl md:leading-relaxed space-y-2 md:space-y-6
+            <div className={`font-[family-name:var(--font-crimson)] text-[11px] leading-[1.3] sm:text-sm md:text-2xl md:leading-relaxed space-y-2 md:space-y-6
               transition-all duration-1000 delay-700
               ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
               ${theme === 'light' ? 'italic font-normal' : 'font-light'}

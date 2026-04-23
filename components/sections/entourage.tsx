@@ -395,7 +395,7 @@ export function Entourage() {
       {/* Section Header */}
       <div className={`relative z-30 text-center mb-4 sm:mb-5 md:mb-6 px-3 sm:px-4 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"}`}>
         <p
-          className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] mb-2`}
+          className={`font-[family-name:var(--font-crimson)] text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] mb-2`}
           style={{ color: palette.deep }}
         >
           Those who stand with {siteConfig.couple.groomNickname} &amp; {siteConfig.couple.brideNickname}
@@ -409,7 +409,7 @@ export function Entourage() {
         </h2>
 
         <p
-          className={`${cormorant.className} text-xs sm:text-sm md:text-base mb-2 sm:mb-2.5 md:mb-3 italic opacity-90`}
+          className={`font-[family-name:var(--font-crimson)] text-xs sm:text-sm md:text-base mb-2 sm:mb-2.5 md:mb-3 italic opacity-90`}
           style={{ color: palette.deep }}
         >
           Honoring those who share in our joy
