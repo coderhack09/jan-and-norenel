@@ -11,7 +11,9 @@ const siteUrl =
 const canonicalUrl = siteUrl.replace(/\/$/, "")
 const desktopHero = "/Details/linkPreviewNext.png"
 const mobileHero = "/Details/linkPreviewNext.png"
-const eventImageUrl = `${canonicalUrl}${desktopHero}`
+/** Absolute CDN URL for og:image / Twitter cards (crawlers fetch this directly; must be public HTTPS). */
+const eventImageUrl =
+  "https://res.cloudinary.com/dlkznubkj/image/upload/v1776952968/wedding-projects/jan-and-norenel/Details/linkPreviewNext.png"
 
 const coupleNames = `${siteConfig.couple.groomNickname} & ${siteConfig.couple.brideNickname}`
 const eventTitle = `${coupleNames} - Wedding Invitation`
@@ -114,8 +116,9 @@ export const metadata: Metadata = {
       {
         url: eventImageUrl,
         secureUrl: eventImageUrl,
+        // Must match the real file or Facebook’s crawler may show no/wrong image (Cloudinary reports 1200×630).
         width: 1200,
-        height: 600,
+        height: 630,
         type: "image/png",
         alt: `${coupleNames} Wedding Invitation - ${siteConfig.wedding.date}`,
       },
