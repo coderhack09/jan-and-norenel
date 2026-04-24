@@ -27,7 +27,7 @@ export const siteConfig = {
   },
   details: {
     rsvp: {
-      deadline: "MAY 30, 2026",
+      deadline: "July 30, 2026",
       contact: "Norenel T. Tolentino",
       phone: "0927 888 8888",
     },
