@@ -2,6 +2,46 @@ import bundleAnalyzer from '@next/bundle-analyzer';
 
 const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === 'true' });
 
+/**
+ * Open https + same-origin, but explicit script/style rules so Next.js (inline
+ * hydration, CSS-in-JS) still works. Broad img/connect (https:) helps crawlers
+ * and tools (e.g. Facebook Sharing Debugger) that run your page in a browser.
+ */
+function buildContentSecurityPolicy(isDevelopment) {
+  const connectSrc = isDevelopment
+    ? [
+        "'self'",
+        "https:",
+        "wss:",
+        "ws:",
+        "http://127.0.0.1:3000",
+        "http://localhost:3000",
+        "ws://127.0.0.1:3000",
+        "ws://localhost:3000",
+        "https://vercel.live",
+      ]
+    : ["'self'", "https:", "wss:"]
+
+  return [
+    "default-src 'self' https: data: blob:",
+    "base-uri 'self'",
+    "object-src 'none'",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https:",
+    "style-src 'self' 'unsafe-inline' https:",
+    "img-src 'self' data: https: blob:",
+    "font-src 'self' data: https:",
+    `connect-src ${connectSrc.join(" ")}`,
+    "media-src 'self' https: data: blob:",
+    "worker-src 'self' blob:",
+    "manifest-src 'self'",
+    "frame-src 'self' https:",
+    "frame-ancestors 'self'",
+    isDevelopment ? "" : "upgrade-insecure-requests",
+  ]
+    .filter(Boolean)
+    .join("; ")
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -34,11 +74,16 @@ const nextConfig = {
   },
   headers: async () => {
     const isDevelopment = process.env.NODE_ENV === 'development';
-    
+    const contentSecurityPolicy = buildContentSecurityPolicy(isDevelopment)
+
     return [
       {
         source: "/:path*",
         headers: [
+          {
+            key: "Content-Security-Policy",
+            value: contentSecurityPolicy,
+          },
           {
             key: "X-DNS-Prefetch-Control",
             value: "on",
